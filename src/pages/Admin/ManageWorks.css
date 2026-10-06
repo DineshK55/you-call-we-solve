@@ -1,0 +1,525 @@
+/* =========================================
+   MANAGE WORKS PAGE
+========================================= */
+
+.manage-works-page {
+  min-height: 100vh;
+  padding: 42px 32px 70px;
+  background: #f8fafc;
+}
+
+.manage-works-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.manage-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  margin-bottom: 24px;
+
+  color: #0f766e;
+  font-size: 13px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.manage-back-btn:hover {
+  color: #115e59;
+  transform: translateX(-3px);
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.manage-works-header {
+  margin-bottom: 34px;
+}
+
+.manage-works-header p:first-child {
+  margin: 0 0 10px;
+
+  color: #0f766e;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.manage-works-header h1 {
+  margin: 0 0 10px;
+
+  color: #0f172a;
+
+  font-size: 42px;
+  line-height: 1.1;
+
+  letter-spacing: -1.2px;
+}
+
+.manage-works-header p:last-child {
+  margin: 0;
+
+  max-width: 650px;
+
+  color: #475569;
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   PROFESSIONAL BACK BUTTON
+========================================= */
+
+.admin-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  min-height: 38px;
+
+  margin-bottom: 24px;
+  padding: 0 14px;
+
+  border: 1px solid #dbe3ec;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #334155;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-back-btn:hover {
+  background: #f8fafc;
+
+  border-color: #0f766e;
+
+  color: #0f766e;
+
+  transform: translateX(-2px);
+
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.07);
+}
+
+.admin-back-btn:active {
+  transform: translateX(-1px);
+}
+
+
+/* =========================================
+   WORK GRID
+========================================= */
+
+.works-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+
+/* =========================================
+   WORK CARD
+========================================= */
+
+.work-card {
+  min-width: 0;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 4px 16px rgba(15, 23, 42, 0.04);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-3px);
+
+  border-color: #cbd5e1;
+
+  box-shadow:
+    0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+
+/* =========================================
+   THUMBNAIL
+========================================= */
+
+.work-card-image {
+  width: 100%;
+  height: 120px;
+
+  background: #e2e8f0;
+
+  overflow: hidden;
+}
+
+.work-card-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.3s ease;
+}
+
+.work-card:hover .work-card-image img {
+  transform: scale(1.03);
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.work-card-content {
+  padding: 16px;
+}
+
+.work-card-content h2 {
+  margin: 0 0 12px;
+
+  color: #0f172a;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  line-height: 1.3;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================
+   WORK INFORMATION
+========================================= */
+
+.work-info {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  margin-bottom: 16px;
+}
+
+.work-info p {
+  min-width: 0;
+
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+  line-height: 1.4;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.work-info strong {
+  color: #1e293b;
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.work-card-actions {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 8px;
+}
+
+.work-card-actions button,
+.work-card-actions a {
+  min-height: 36px;
+
+  padding: 0 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* =========================================
+   EDIT
+========================================= */
+
+.edit-btn {
+  border: 1px solid #0f766e;
+
+  background: #0f766e;
+
+  color: #ffffff;
+}
+
+.edit-btn:hover {
+  background: #115e59;
+
+  border-color: #115e59;
+}
+
+
+/* =========================================
+   DELETE
+========================================= */
+
+.delete-btn {
+  border: 1px solid #fecaca;
+
+  background: #fff1f2;
+
+  color: #b91c1c;
+}
+
+.delete-btn:hover {
+  background: #fee2e2;
+
+  border-color: #fca5a5;
+}
+
+
+/* =========================================
+   EMPTY / LOADING STATE
+========================================= */
+
+.no-works {
+  padding: 70px 20px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 14px;
+}
+
+.no-works h2 {
+  margin: 0 0 8px;
+
+  color: #0f172a;
+
+  font-size: 22px;
+}
+
+.no-works p {
+  margin: 0 0 22px;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
+@media (min-width: 1400px) {
+
+  .works-grid {
+    gap: 20px;
+  }
+
+  .work-card-image {
+    height: 125px;
+  }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .manage-works-page {
+    padding: 40px 24px 60px;
+  }
+
+  .works-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 16px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL TABLET
+========================================= */
+
+@media (max-width: 850px) {
+
+  .works-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+  }
+
+  .work-card-image {
+    height: 130px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+  .manage-works-page {
+    padding: 32px 16px 50px;
+  }
+
+  .manage-works-header {
+    margin-bottom: 26px;
+  }
+
+  .manage-works-header h1 {
+    font-size: 32px;
+    letter-spacing: -0.8px;
+  }
+
+  .manage-works-header p:last-child {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .works-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .work-card-image {
+    height: 180px;
+  }
+
+  .work-card-content {
+    padding: 15px;
+  }
+
+  .work-card-content h2 {
+    font-size: 16px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .manage-works-page {
+    padding: 28px 12px 45px;
+  }
+
+  .manage-works-header h1 {
+    font-size: 28px;
+  }
+
+  .manage-works-header p:last-child {
+    font-size: 13px;
+  }
+
+  .work-card-image {
+    height: 160px;
+  }
+
+  .work-card-content {
+    padding: 14px;
+  }
+
+  .work-info {
+    gap: 5px;
+    margin-bottom: 14px;
+  }
+
+  .work-info p {
+    font-size: 11px;
+  }
+
+  .work-card-actions button,
+  .work-card-actions a {
+    min-height: 35px;
+    font-size: 11px;
+  }
+
+}

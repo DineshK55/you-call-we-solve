@@ -1,0 +1,342 @@
+.works-page {
+  padding: 70px 24px;
+  background: var(--light);
+}
+
+.works-page-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* =========================
+   PAGE HEADING
+========================= */
+
+.works-page-heading {
+  max-width: 650px;
+  margin-bottom: 38px;
+}
+
+.works-page-heading p {
+  margin-bottom: 8px;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+.works-page-heading h1 {
+  margin-bottom: 10px;
+  color: var(--dark);
+  font-size: 42px;
+  line-height: 1.15;
+}
+
+.works-page-heading span {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.works-page-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.works-page-card {
+  overflow: hidden;
+
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  opacity: 0;
+  animation: workReveal 0.55s ease forwards;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.works-page-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.works-page-card:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.works-page-card:nth-child(3) {
+  animation-delay: 0.19s;
+}
+
+.works-page-card:nth-child(4) {
+  animation-delay: 0.26s;
+}
+
+.works-page-card:nth-child(5) {
+  animation-delay: 0.33s;
+}
+
+.works-page-card:nth-child(6) {
+  animation-delay: 0.40s;
+}
+
+.works-page-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #cbd5e1;
+
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.09);
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.works-page-image {
+  width: 100%;
+  height: 165px;
+
+  overflow: hidden;
+
+  background: #e5e7eb;
+}
+
+.works-page-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.45s ease;
+}
+
+.works-page-card:hover .works-page-image img {
+  transform: scale(1.045);
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.works-page-content {
+  padding: 17px;
+}
+
+.works-page-content > p {
+  margin-bottom: 6px;
+
+  color: var(--primary);
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+
+  text-transform: uppercase;
+}
+
+.works-page-content h2 {
+  margin-bottom: 8px;
+
+  color: var(--dark);
+
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.works-page-content span {
+  display: block;
+
+  margin-bottom: 14px;
+
+  color: var(--text);
+
+  font-size: 13px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.works-page-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 14px;
+
+  border: 1px solid var(--primary);
+  border-radius: 5px;
+
+  background: transparent;
+  color: var(--primary);
+
+  font-size: 12px;
+  font-weight: 600;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.works-page-btn:hover {
+  background: var(--primary);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
+/* =========================
+   LOADING / EMPTY
+========================= */
+
+.works-page-status {
+  min-height: 180px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--text);
+
+  font-size: 15px;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .works-page {
+    padding: 60px 20px;
+  }
+
+  .works-page-container {
+    max-width: 760px;
+  }
+
+  .works-page-heading h1 {
+    font-size: 36px;
+  }
+
+  .works-page-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .works-page-image {
+    height: 175px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .works-page {
+    padding: 50px 16px;
+  }
+
+  .works-page-heading {
+    margin-bottom: 30px;
+  }
+
+  .works-page-heading h1 {
+    font-size: 31px;
+  }
+
+  .works-page-heading span {
+    font-size: 14px;
+  }
+
+  .works-page-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .works-page-image {
+    height: 190px;
+  }
+
+  .works-page-content {
+    padding: 17px;
+  }
+
+  .works-page-content h2 {
+    font-size: 18px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+  .works-page {
+    padding: 45px 14px;
+  }
+
+  .works-page-heading h1 {
+    font-size: 29px;
+  }
+
+  .works-page-image {
+    height: 180px;
+  }
+
+  .works-page-content {
+    padding: 16px;
+  }
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes workReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+.works-page-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .works-page-card {
+    animation: none;
+    opacity: 1;
+  }
+
+  .works-page-card,
+  .works-page-image img,
+  .works-page-btn {
+    transition: none;
+  }
+}

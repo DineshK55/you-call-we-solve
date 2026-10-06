@@ -1,0 +1,286 @@
+.why-choose-us {
+  padding: 90px 24px;
+  background: var(--white);
+}
+
+.why-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.why-heading {
+  max-width: 700px;
+  margin-bottom: 45px;
+}
+
+.why-heading p {
+  margin-bottom: 10px;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.why-heading h2 {
+  margin-bottom: 12px;
+  color: var(--dark);
+  font-size: 40px;
+  line-height: 1.2;
+}
+
+.why-heading span {
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.why-card {
+  position: relative;
+  overflow: hidden;
+
+  padding: 28px 24px;
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  background: var(--white);
+
+  opacity: 0;
+
+  animation: whyCardReveal 0.6s ease forwards;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.why-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.why-card:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.why-card:nth-child(3) {
+  animation-delay: 0.19s;
+}
+
+.why-card:nth-child(4) {
+  animation-delay: 0.26s;
+}
+
+.why-card:hover {
+  transform: translateY(-7px);
+  border-color: #cbd5e1;
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.09);
+}
+
+/* =========================
+   TOP ACCENT
+========================= */
+
+.why-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 3px;
+
+  opacity: 0;
+
+  transition: opacity 0.3s ease;
+}
+
+.why-card:hover::before {
+  opacity: 1;
+}
+
+.why-card:nth-child(1)::before {
+  background: #2563eb;
+}
+
+.why-card:nth-child(2)::before {
+  background: #7c3aed;
+}
+
+.why-card:nth-child(3)::before {
+  background: #f59e0b;
+}
+
+.why-card:nth-child(4)::before {
+  background: #16a34a;
+}
+
+/* =========================
+   ICON
+========================= */
+
+.why-icon {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 20px;
+
+  border-radius: 10px;
+
+  font-size: 21px;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Individual icon colors */
+
+.why-card:nth-child(1) .why-icon {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.why-card:nth-child(2) .why-icon {
+  background: #ede9fe;
+  color: #7c3aed;
+}
+
+.why-card:nth-child(3) .why-icon {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.why-card:nth-child(4) .why-icon {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+/* Icon hover */
+
+.why-card:hover .why-icon {
+  transform: translateY(-3px) scale(1.06);
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.08);
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.why-card h3 {
+  margin-bottom: 10px;
+
+  color: var(--dark);
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.why-card p {
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* =========================
+   CARD ANIMATION
+========================= */
+
+@keyframes whyCardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .why-choose-us {
+    padding: 70px 18px;
+  }
+
+  .why-heading {
+    margin-bottom: 32px;
+  }
+
+  .why-heading h2 {
+    font-size: 32px;
+  }
+
+  .why-heading span {
+    font-size: 15px;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .why-card {
+    padding: 24px 20px;
+  }
+
+  .why-card h3 {
+    font-size: 18px;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .why-card {
+    opacity: 1;
+    animation: none;
+    transition: none;
+  }
+
+  .why-card:hover {
+    transform: none;
+  }
+
+  .why-icon {
+    transition: none;
+  }
+}

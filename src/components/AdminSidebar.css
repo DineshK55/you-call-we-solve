@@ -1,0 +1,290 @@
+/* =========================================
+   ADMIN HEADER
+========================================= */
+
+.admin-header {
+  width: 100%;
+  background: #0f172a;
+  border-bottom: 1px solid #1e293b;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.admin-header-container {
+  min-height: 76px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.admin-header-logo {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.admin-header-logo h2 {
+  margin: 0;
+
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.admin-header-logo span {
+  margin-top: 4px;
+
+  color: #14b8a6;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.admin-header-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-left: auto;
+}
+
+.admin-header-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 40px;
+  padding: 0 16px;
+
+  color: #cbd5e1;
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  border-radius: 8px;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.admin-header-nav a:hover {
+  color: #ffffff;
+  background: #1e293b;
+}
+
+.admin-header-nav a.active {
+  color: #ffffff;
+  background: #1e293b;
+}
+
+
+/* =========================================
+   ADD WORK
+========================================= */
+
+.admin-header-nav .admin-add-work-link {
+  margin-left: 4px;
+
+  background: #0f766e;
+  color: #ffffff;
+}
+
+.admin-header-nav .admin-add-work-link:hover {
+  background: #115e59;
+  color: #ffffff;
+}
+
+
+/* =========================================
+   LOGOUT
+========================================= */
+
+.admin-logout-btn {
+  min-height: 40px;
+  padding: 0 16px;
+
+  border: 1px solid #334155;
+  border-radius: 8px;
+
+  background: transparent;
+  color: #cbd5e1;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.admin-logout-btn:hover {
+  background: #1e293b;
+  border-color: #475569;
+  color: #ffffff;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .admin-header-container {
+    padding: 0 20px;
+    gap: 16px;
+  }
+
+  .admin-header-logo h2 {
+    font-size: 18px;
+  }
+
+  .admin-header-nav {
+    gap: 4px;
+  }
+
+  .admin-header-nav a {
+    padding: 0 12px;
+    font-size: 13px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .admin-header-container {
+    min-height: auto;
+
+    padding: 12px 14px;
+
+    display: grid;
+
+    grid-template-columns: 1fr auto;
+
+    gap: 12px;
+  }
+
+
+  /* Logo */
+
+  .admin-header-logo {
+    min-width: 0;
+  }
+
+  .admin-header-logo h2 {
+    font-size: 17px;
+    line-height: 1.2;
+  }
+
+  .admin-header-logo span {
+    margin-top: 3px;
+    font-size: 8px;
+    letter-spacing: 1.6px;
+  }
+
+
+  /* Logout */
+
+  .admin-logout-btn {
+    min-height: 36px;
+    padding: 0 12px;
+
+    font-size: 12px;
+  }
+
+
+  /* Navigation */
+
+  .admin-header-nav {
+    grid-column: 1 / -1;
+
+    width: 100%;
+    margin: 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 6px;
+  }
+
+  .admin-header-nav a {
+    width: 100%;
+    min-height: 38px;
+
+    padding: 0 6px;
+
+    font-size: 12px;
+  }
+
+  .admin-header-nav .admin-add-work-link {
+    margin-left: 0;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 430px) {
+
+  .admin-header-container {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .admin-header-logo h2 {
+    font-size: 15px;
+  }
+
+  .admin-header-logo span {
+    font-size: 7px;
+  }
+
+  .admin-logout-btn {
+    min-height: 34px;
+    padding: 0 10px;
+
+    font-size: 11px;
+  }
+
+  .admin-header-nav {
+    gap: 5px;
+  }
+
+  .admin-header-nav a {
+    min-height: 36px;
+
+    font-size: 11px;
+    border-radius: 6px;
+  }
+
+}

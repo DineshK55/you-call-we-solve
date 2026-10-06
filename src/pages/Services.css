@@ -1,0 +1,283 @@
+.services-page {
+  padding: 80px 24px;
+  background: var(--light);
+}
+
+.services-page-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* =========================
+   PAGE HEADING
+========================= */
+
+.services-page-label {
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+.services-page h1 {
+  color: var(--dark);
+  font-size: 44px;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.services-page-description {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* =========================
+   SERVICES GRID
+========================= */
+
+.services-page-grid {
+  margin-top: 45px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+  text-align: left;
+}
+
+/* =========================
+   SERVICE CARD
+========================= */
+
+.services-page-card {
+  padding: 24px;
+
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.services-page-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #cbd5e1;
+
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.09);
+}
+
+/* =========================
+   ICON
+========================= */
+
+.services-page-icon {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 16px;
+
+  border-radius: 8px;
+
+  background: #ccfbf1;
+  color: var(--primary);
+
+  font-size: 19px;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.services-page-card:hover .services-page-icon {
+  transform: scale(1.08);
+  background: #99f6e4;
+}
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.services-page-card h2 {
+  color: var(--dark);
+  font-size: 20px;
+  line-height: 1.3;
+  margin-bottom: 9px;
+}
+
+.services-page-card p {
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.services-page-cta {
+  margin-top: 45px;
+
+  padding: 34px 24px;
+
+  text-align: center;
+
+  background: var(--dark);
+  border-radius: 10px;
+}
+
+.services-page-cta h2 {
+  color: var(--white);
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.services-page-cta p {
+  color: #d1d5db;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.services-page-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 11px 20px;
+
+  background: var(--primary);
+  color: var(--white);
+
+  border-radius: 6px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.services-page-cta-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .services-page {
+    padding: 70px 20px;
+  }
+
+  .services-page-container {
+    max-width: 760px;
+  }
+
+  .services-page h1 {
+    font-size: 38px;
+  }
+
+  .services-page-grid {
+    gap: 18px;
+  }
+
+  .services-page-card {
+    padding: 22px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .services-page {
+    padding: 60px 16px;
+  }
+
+  .services-page h1 {
+    font-size: 32px;
+  }
+
+  .services-page-description {
+    font-size: 14px;
+  }
+
+  .services-page-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 35px;
+  }
+
+  .services-page-card {
+    padding: 20px;
+  }
+
+  .services-page-card h2 {
+    font-size: 19px;
+  }
+
+  .services-page-card p {
+    font-size: 14px;
+  }
+
+  .services-page-cta {
+    margin-top: 35px;
+    padding: 30px 20px;
+  }
+
+  .services-page-cta h2 {
+    font-size: 23px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+  .services-page {
+    padding: 50px 14px;
+  }
+
+  .services-page h1 {
+    font-size: 29px;
+  }
+
+  .services-page-card {
+    padding: 18px;
+  }
+
+  .services-page-icon {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .services-page-card,
+  .services-page-icon,
+  .services-page-cta-btn {
+    transition: none;
+  }
+}

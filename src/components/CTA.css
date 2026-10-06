@@ -1,0 +1,332 @@
+.cta {
+  position: relative;
+  overflow: hidden;
+
+  padding: 75px 24px;
+
+  background: var(--dark);
+}
+
+/* =========================
+   BACKGROUND GLOW
+========================= */
+
+.cta::before {
+  content: "";
+
+  position: absolute;
+  width: 420px;
+  height: 420px;
+
+  top: -220px;
+  right: -120px;
+
+  border-radius: 50%;
+
+  background: rgba(15, 118, 110, 0.16);
+
+  filter: blur(10px);
+
+  animation: ctaGlow 6s ease-in-out infinite alternate;
+}
+
+.cta::after {
+  content: "";
+
+  position: absolute;
+  width: 260px;
+  height: 260px;
+
+  bottom: -180px;
+  left: 10%;
+
+  border-radius: 50%;
+
+  background: rgba(245, 158, 11, 0.08);
+
+  filter: blur(10px);
+
+  animation: ctaGlow 7s ease-in-out infinite alternate-reverse;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.cta-container {
+  position: relative;
+  z-index: 1;
+
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 40px;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.cta-content {
+  max-width: 650px;
+
+  opacity: 0;
+
+  animation: ctaContentReveal 0.7s ease forwards;
+}
+
+.cta-content p {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  color: var(--accent);
+
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.cta-content h2 {
+  margin-bottom: 12px;
+
+  color: var(--white);
+
+  font-size: 40px;
+  line-height: 1.2;
+}
+
+.cta-content span {
+  color: #cbd5e1;
+
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* =========================
+   ACTIONS
+========================= */
+
+.cta-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  flex-shrink: 0;
+
+  opacity: 0;
+
+  animation: ctaActionsReveal 0.7s ease 0.15s forwards;
+}
+
+/* =========================
+   BUTTON BASE
+========================= */
+
+.cta-primary-btn,
+.cta-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  min-width: 125px;
+
+  padding: 12px 20px;
+
+  border-radius: 7px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+/* =========================
+   CONTACT BUTTON
+========================= */
+
+.cta-primary-btn {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.cta-primary-btn svg {
+  font-size: 12px;
+
+  transition: transform 0.25s ease;
+}
+
+.cta-primary-btn:hover {
+  background: var(--primary-dark);
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 20px rgba(15, 118, 110, 0.3);
+}
+
+.cta-primary-btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* =========================
+   WHATSAPP BUTTON
+========================= */
+
+.cta-whatsapp-btn {
+  background: var(--white);
+  color: var(--dark);
+}
+
+.cta-whatsapp-btn svg {
+  color: #16a34a;
+
+  font-size: 17px;
+
+  transition: transform 0.25s ease;
+}
+
+.cta-whatsapp-btn:hover {
+  background: #f1f5f9;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.16);
+}
+
+.cta-whatsapp-btn:hover svg {
+  transform: scale(1.12);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes ctaContentReveal {
+  from {
+    opacity: 0;
+    transform: translateX(-25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes ctaActionsReveal {
+  from {
+    opacity: 0;
+    transform: translateX(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes ctaGlow {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+
+  to {
+    transform: translate(-25px, 20px) scale(1.12);
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 850px) {
+  .cta-container {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 28px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .cta {
+    padding: 65px 18px;
+  }
+
+  .cta-container {
+    gap: 28px;
+  }
+
+  .cta-content h2 {
+    font-size: 32px;
+  }
+
+  .cta-content span {
+    font-size: 15px;
+  }
+
+  .cta-actions {
+    width: 100%;
+
+    gap: 10px;
+  }
+
+  .cta-primary-btn,
+  .cta-whatsapp-btn {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 12px 14px;
+  }
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+.cta-primary-btn:focus-visible,
+.cta-whatsapp-btn:focus-visible {
+  outline: 2px solid var(--accent);
+
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta::before,
+  .cta::after,
+  .cta-content,
+  .cta-actions {
+    animation: none;
+  }
+
+  .cta-content,
+  .cta-actions {
+    opacity: 1;
+  }
+
+  .cta-primary-btn,
+  .cta-whatsapp-btn,
+  .cta-primary-btn svg,
+  .cta-whatsapp-btn svg {
+    transition: none;
+  }
+}

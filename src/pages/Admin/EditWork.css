@@ -1,0 +1,658 @@
+/* =========================================
+   PAGE
+========================================= */
+
+.edit-work-page {
+  min-height: 100vh;
+  padding: 40px 24px 60px;
+  background: #f8fafc;
+}
+
+.edit-work-container {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.edit-work-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  margin-bottom: 22px;
+  padding: 8px 13px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+
+  background: #ffffff;
+  color: #0f766e;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.edit-work-back-btn:hover {
+  background: #f0fdfa;
+  border-color: #0f766e;
+  transform: translateX(-2px);
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.edit-work-heading {
+  margin-bottom: 24px;
+}
+
+.edit-work-heading p {
+  margin: 0 0 6px;
+
+  color: #0f766e;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 1.4px;
+}
+
+.edit-work-heading h1 {
+  margin: 0 0 6px;
+
+  color: #111827;
+
+  font-size: 32px;
+  line-height: 1.15;
+}
+
+.edit-work-heading span {
+  display: block;
+
+  color: #6b7280;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.edit-work-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+
+/* =========================================
+   SECTION
+========================================= */
+
+.edit-work-section {
+  min-width: 0;
+
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+
+  box-shadow:
+    0 3px 12px rgba(15, 23, 42, 0.04);
+}
+
+.edit-work-section h2 {
+  margin: 0 0 15px;
+
+  color: #111827;
+
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+
+/* =========================================
+   FIELDS
+========================================= */
+
+.edit-work-fields {
+  display: flex;
+  flex-direction: column;
+
+  gap: 13px;
+}
+
+.edit-work-field {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  min-width: 0;
+}
+
+.edit-work-field label {
+  color: #374151;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.edit-work-field input,
+.edit-work-field select,
+.edit-work-field textarea {
+  width: 100%;
+  max-width: 100%;
+
+  padding: 10px 12px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+
+  outline: none;
+
+  background: #ffffff;
+  color: #111827;
+
+  font-size: 13px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.edit-work-field input:focus,
+.edit-work-field select:focus,
+.edit-work-field textarea:focus {
+  border-color: #0f766e;
+
+  box-shadow:
+    0 0 0 3px rgba(15, 118, 110, 0.08);
+}
+
+.edit-work-field textarea {
+  min-height: 120px;
+
+  resize: vertical;
+}
+
+
+/* =========================================
+   SECTION HEADER
+========================================= */
+
+.edit-work-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 15px;
+}
+
+.edit-work-section-header h2 {
+  margin-bottom: 3px;
+}
+
+.edit-work-section-header p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+
+/* =========================================
+   ADD IMAGE BUTTON
+========================================= */
+
+.add-image-btn {
+  flex-shrink: 0;
+
+  min-height: 34px;
+
+  padding: 8px 12px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #0f766e;
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.add-image-btn:hover {
+  background: #115e59;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   IMAGE GRID
+========================================= */
+
+.edit-image-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  gap: 10px;
+}
+
+
+/* =========================================
+   IMAGE CARD
+========================================= */
+
+.edit-image-card {
+  position: relative;
+
+  min-width: 0;
+
+  overflow: visible;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 7px;
+
+  background: #f3f4f6;
+}
+
+.edit-image-card img {
+  display: block;
+
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  object-fit: cover;
+
+  border-radius: 7px;
+}
+
+
+/* =========================================
+   REMOVE IMAGE
+========================================= */
+
+.remove-image-btn {
+  position: absolute;
+
+  top: 5px;
+  right: 5px;
+
+  width: 23px;
+  height: 23px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(185, 28, 28, 0.95);
+  color: #ffffff;
+
+  font-size: 16px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  z-index: 2;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.remove-image-btn:hover {
+  background: #991b1b;
+  transform: scale(1.05);
+}
+
+
+/* =========================================
+   IMAGE LABEL
+========================================= */
+
+.edit-image-card span {
+  position: absolute;
+
+  left: 5px;
+  bottom: 5px;
+
+  max-width: calc(100% - 10px);
+
+  padding: 3px 6px;
+
+  border-radius: 4px;
+
+  background: rgba(17, 24, 39, 0.82);
+  color: #ffffff;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================
+   NO IMAGES
+========================================= */
+
+.no-images {
+  grid-column: 1 / -1;
+
+  padding: 28px 15px;
+
+  border: 1px dashed #d1d5db;
+  border-radius: 8px;
+
+  color: #9ca3af;
+
+  text-align: center;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   COMPRESSION INFO
+========================================= */
+
+.image-compression-info {
+  width: 100%;
+
+  margin-top: 8px;
+  padding: 7px 9px;
+
+  box-sizing: border-box;
+
+  background: #f8fafc;
+
+  border-radius: 7px;
+
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.image-compression-info p {
+  margin: 2px 0;
+
+  color: #475569;
+}
+
+.compressing-text {
+  color: #0f766e !important;
+  font-weight: 600;
+}
+
+.compression-saved {
+  color: #15803d !important;
+  font-weight: 600;
+}
+
+.compression-error {
+  color: #dc2626 !important;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.edit-work-actions {
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 9px;
+
+  padding-top: 4px;
+}
+
+.cancel-edit-btn,
+.save-edit-btn {
+  min-width: 110px;
+  min-height: 38px;
+
+  padding: 9px 16px;
+
+  border: none;
+  border-radius: 7px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.cancel-edit-btn {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.cancel-edit-btn:hover {
+  background: #d1d5db;
+}
+
+.save-edit-btn {
+  background: #0f766e;
+  color: #ffffff;
+}
+
+.save-edit-btn:hover {
+  background: #115e59;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.edit-work-loading {
+  padding: 60px 20px;
+
+  text-align: center;
+}
+
+.edit-work-loading h2 {
+  margin: 0 0 8px;
+
+  color: #111827;
+}
+
+.edit-work-loading p {
+  margin: 0;
+
+  color: #6b7280;
+}
+
+.edit-work-loading button {
+  margin-top: 18px;
+
+  padding: 9px 16px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #0f766e;
+  color: #ffffff;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+  .edit-work-page {
+    padding: 30px 18px 50px;
+  }
+
+  .edit-image-grid {
+    grid-template-columns:
+      repeat(4, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .edit-work-page {
+    padding: 24px 14px 42px;
+  }
+
+  .edit-work-container {
+    max-width: 100%;
+  }
+
+  .edit-work-back-btn {
+    margin-bottom: 18px;
+  }
+
+  .edit-work-heading {
+    margin-bottom: 20px;
+  }
+
+  .edit-work-heading h1 {
+    font-size: 27px;
+  }
+
+  .edit-work-heading span {
+    font-size: 13px;
+  }
+
+  .edit-work-section {
+    padding: 16px;
+
+    border-radius: 9px;
+  }
+
+
+  /* Image section */
+
+  .edit-work-section-header {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .add-image-btn {
+    width: 100%;
+  }
+
+  .edit-image-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 9px;
+  }
+
+
+  /* Actions */
+
+  .edit-work-actions {
+    flex-direction: column-reverse;
+
+    gap: 8px;
+  }
+
+  .cancel-edit-btn,
+  .save-edit-btn {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .edit-work-page {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .edit-work-section {
+    padding: 13px;
+  }
+
+  .edit-work-heading h1 {
+    font-size: 24px;
+  }
+
+  .edit-image-grid {
+    gap: 7px;
+  }
+
+  .remove-image-btn {
+    width: 21px;
+    height: 21px;
+
+    top: 4px;
+    right: 4px;
+
+    font-size: 14px;
+  }
+
+  .edit-image-card span {
+    font-size: 8px;
+  }
+
+}
