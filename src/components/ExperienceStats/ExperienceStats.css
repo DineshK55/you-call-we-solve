@@ -1,0 +1,386 @@
+/* =========================
+   EXPERIENCE STATS
+========================= */
+
+.experience-stats {
+  position: relative;
+  padding: 58px 24px 35px;
+  background: var(--light);
+  overflow: hidden;
+}
+
+/* Soft background glow */
+
+.experience-stats::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+
+  top: -220px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  background: radial-gradient(
+    circle,
+    rgba(107, 33, 168, 0.08) 0%,
+    rgba(107, 33, 168, 0.03) 38%,
+    transparent 72%
+  );
+
+  pointer-events: none;
+}
+
+.experience-stats-container {
+  position: relative;
+  z-index: 1;
+
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.experience-stats-heading {
+  max-width: 700px;
+  margin: 0 auto 34px;
+
+  text-align: center;
+
+  animation: experienceHeading 0.7s ease both;
+}
+
+.experience-stats-heading p {
+  margin: 0 0 9px;
+
+  color: var(--primary);
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+
+  text-transform: uppercase;
+}
+
+.experience-stats-heading h2 {
+  margin: 0 0 10px;
+
+  color: var(--dark);
+
+  font-size: 34px;
+  font-weight: 700;
+
+  line-height: 1.2;
+  letter-spacing: -0.4px;
+}
+
+.experience-stats-heading span {
+  display: block;
+
+  max-width: 620px;
+  margin: 0 auto;
+
+  color: var(--text);
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================
+   STATS PANEL
+========================= */
+
+.experience-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  background: rgba(255, 255, 255, 0.92);
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.04),
+    0 2px 8px rgba(15, 23, 42, 0.03);
+
+  animation: experiencePanel 0.8s ease 0.1s both;
+}
+
+
+/* =========================
+   INDIVIDUAL STAT
+========================= */
+
+.experience-stat {
+  position: relative;
+
+  min-height: 118px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 22px 15px;
+
+  text-align: center;
+
+  border-right: 1px solid var(--border);
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Remove last divider */
+
+.experience-stat:last-child {
+  border-right: none;
+}
+
+
+/* Top accent line */
+
+.experience-stat::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  width: 0;
+  height: 2px;
+
+  transform: translateX(-50%);
+
+  background: var(--primary);
+
+  transition: width 0.3s ease;
+}
+
+
+/* Hover */
+
+.experience-stat:hover {
+  background: rgba(255, 255, 255, 1);
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(107, 33, 168, 0.05),
+    0 8px 20px rgba(15, 23, 42, 0.05);
+}
+
+.experience-stat:hover::before {
+  width: 42px;
+}
+
+
+/* =========================
+   NUMBER
+========================= */
+
+.experience-stat strong {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: var(--primary);
+
+  font-size: 29px;
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: -0.5px;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.experience-stat:hover strong {
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+.experience-stat span {
+  color: var(--dark);
+
+  font-size: 12px;
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+
+/* =========================
+   ENTRANCE ANIMATIONS
+========================= */
+
+@keyframes experienceHeading {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes experiencePanel {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .experience-stats {
+    padding: 55px 20px 58px;
+  }
+
+  .experience-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .experience-stat:nth-child(2) {
+    border-right: none;
+  }
+
+  .experience-stat:nth-child(1),
+  .experience-stat:nth-child(2) {
+    border-bottom: 1px solid var(--border);
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+ .experience-stats {
+  padding: 50px 16px 35px;
+}
+
+  .experience-stats-heading {
+    margin-bottom: 28px;
+  }
+
+  .experience-stats-heading p {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .experience-stats-heading h2 {
+    font-size: 28px;
+    letter-spacing: -0.2px;
+  }
+
+  .experience-stats-heading span {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .experience-stats-grid {
+    border-radius: 10px;
+  }
+
+  .experience-stat {
+    min-height: 100px;
+
+    padding: 18px 10px;
+  }
+
+  .experience-stat strong {
+    font-size: 25px;
+  }
+
+  .experience-stat span {
+    font-size: 11px;
+  }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+  .experience-stats {
+    padding: 45px 14px 48px;
+  }
+
+  .experience-stats-heading h2 {
+    font-size: 25px;
+  }
+
+  .experience-stats-heading span {
+    font-size: 12px;
+  }
+
+  .experience-stat {
+    min-height: 92px;
+  }
+
+  .experience-stat strong {
+    font-size: 23px;
+  }
+
+  .experience-stat span {
+    font-size: 10.5px;
+  }
+
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .experience-stats-heading,
+  .experience-stats-grid {
+    animation: none;
+  }
+
+  .experience-stat,
+  .experience-stat strong,
+  .experience-stat::before {
+    transition: none;
+  }
+
+}

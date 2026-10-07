@@ -39,7 +39,7 @@ function Navbar() {
 <div className="navbar-actions">
 
   <a
-    href="https://wa.me/91XXXXXXXXXX"
+    href="https://wa.me/916379923436"
     className="navbar-whatsapp"
     target="_blank"
     rel="noopener noreferrer"

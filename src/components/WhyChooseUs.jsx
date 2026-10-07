@@ -5,22 +5,26 @@ const reasons = [
   {
     icon: <FaShieldAlt />,
     title: "Quality & Safety",
-    description: "We focus on safe working practices and quality results.",
+description:
+  "We focus on safe working practices, proper attention and quality results.",
   },
   {
     icon: <FaUserCheck />,
-    title: "Experienced Team",
-    description: "Skilled professionals for different types of service work.",
+    title: "Practical Experience",
+description:
+  "We handle different service requirements with practical experience and proper attention.",
   },
   {
     icon: <FaClock />,
     title: "Reliable Service",
-    description: "We value your time and complete work responsibly.",
+description:
+  "We understand your requirement and focus on completing the work responsibly.",
   },
   {
     icon: <FaAward />,
     title: "Professional Work",
-    description: "Clean, precise and professional service for every project.",
+description:
+  "We focus on neat, precise and professional work according to your requirement.",
   },
 ];
 
@@ -29,12 +33,14 @@ function WhyChooseUs() {
     <section className="why-choose-us">
       <div className="why-container">
         <div className="why-heading">
-          <p>WHY CHOOSE US</p>
-          <h2>Service You Can Depend On</h2>
-          <span>
-            We aim to deliver reliable and professional solutions for every
-            project.
-          </span>
+         <p>WHY CHOOSE US</p>
+
+<h2>Reliable Service. Quality Work.</h2>
+
+<span>
+  Ungaloda work requirement-ku reliable service, quality work and
+  proper attention provide panna naanga focus panrom.
+</span>
         </div>
 
         <div className="why-grid">

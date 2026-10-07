@@ -40,10 +40,13 @@ function WorksSection() {
 
         <div className="works-heading">
           <p>OUR WORK</p>
-          <h2>Completed Works</h2>
-          <span>
-            See some of the work we have completed for our clients.
-          </span>
+
+<h2>Our Recent Work</h2>
+
+<span>
+  Electrical, plumbing, breaker machine & core cutting work we have
+  completed for different requirements.
+</span>
         </div>
 
         {loading ? (
@@ -86,7 +89,7 @@ function WorksSection() {
 
                 <div className="works-view-all">
           <Link to="/works" className="works-view-all-btn">
-            View All Works →
+            View All Works
           </Link>
         </div>
 

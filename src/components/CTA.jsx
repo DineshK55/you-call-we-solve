@@ -7,18 +7,20 @@ function CTA() {
     <section className="cta">
       <div className="cta-container">
         <div className="cta-content">
-          <p>READY TO GET STARTED?</p>
-          <h2>Need Professional Service?</h2>
+          <p>NEED SERVICE?</p>
+          <h2>Work Thevaiya? Engala Call Pannunga.</h2>
           <span>
-            Contact us today and let's discuss your work requirements.
-          </span>
+  Electrical, plumbing, breaker machine & core cutting work thevaiya?
+  Ungaloda requirement-a share pannunga. Naanga service provide panna
+  ready-ah irukom.
+</span>
         </div>
 
         <div className="cta-actions">
   <Link to="/contact" className="cta-primary-btn">
-    Contact Us
-    <FaArrowRight />
-  </Link>
+  Get in Touch
+  <FaArrowRight />
+</Link>
 
   <a
     href="https://wa.me/919999999999"

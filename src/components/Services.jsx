@@ -1,4 +1,4 @@
-import { FaBolt, FaWrench, FaTools, FaCircle } from "react-icons/fa";
+import { FaBolt, FaWrench, FaTools, FaCircleNotch } from "react-icons/fa";
 import "./Services.css";
 
 const services = [
@@ -7,28 +7,28 @@ const services = [
     image: "/images/electrical-work.png",
     title: "Electrical Work",
     description:
-      "Professional electrical installation, repair and maintenance services.",
+  "Electrical installation, wiring, repair and maintenance work for your home, shop and other requirements.",
   },
   {
     icon: <FaWrench />,
     image: "/images/plumbing-work.png",
     title: "Plumbing Work",
     description:
-      "Reliable plumbing solutions for residential and commercial projects.",
+  "Water pipe work, leakage repair, bathroom plumbing and other plumbing requirements.",
   },
   {
     icon: <FaTools />,
     image: "/images/breaker-machine-work.png",
     title: "Breaker Machine Work",
     description:
-      "Powerful and precise breaker machine services for construction work.",
+  "Breaker machine work for concrete breaking, demolition and construction-related requirements.",
   },
   {
-    icon: <FaCircle />,
+    icon: <FaCircleNotch />,
     image: "/images/core-cutting-work.png",
     title: "Core Cutting Work",
     description:
-      "Accurate core cutting solutions for concrete and construction projects.",
+  "Core cutting work for concrete walls, slabs and other construction requirements.",
   },
 ];
 
@@ -37,12 +37,15 @@ function Services() {
     <section className="services">
       <div className="services-container">
         <div className="services-heading">
-          <p>WHAT WE DO</p>
-          <h2>Our Professional Services</h2>
-          <span>
-            Reliable solutions delivered with quality, safety and precision.
-          </span>
-        </div>
+  <p>WHAT WE DO</p>
+
+  <h2>Our Professional Services</h2>
+
+  <span>
+    Electrical, plumbing, breaker machine & core cutting work thevaiya?
+    Ungaloda requirement-ku engala contact pannunga.
+  </span>
+</div>
 
 <div className="services-grid">
   {services.map((service) => (

@@ -81,28 +81,29 @@ function Hero() {
 </div>
       <div className="hero-container">
         <div className="hero-content">
-          <p className="hero-label">PROFESSIONAL SERVICE YOU CAN TRUST</p>
+          <p className="hero-label">RELIABLE LOCAL SERVICE</p>
 
-          <h1>
-            Reliable Solutions.
-            <br />
-            Quality Work.
-          </h1>
+<h1>
+  Electrical, Plumbing
+  <br />
+  & Machine Services
+</h1>
 
-          <p className="hero-description">
-            Professional electrical, plumbing, breaker machine and core
-            cutting services for residential and commercial projects.
-          </p>
+<p className="hero-description">
+  Electrical, plumbing, breaker machine & core cutting work thevaiya?
+  Engala contact pannunga. Anthiyur suthiyulla areas-la reliable service
+  provide pannitu varom.
+</p>
 
-          <div className="hero-actions">
-            <Link to="/contact" className="hero-primary-btn">
-              Get in Touch
-            </Link>
+<div className="hero-actions">
+  <Link to="/contact" className="hero-primary-btn">
+    Call / Contact Us
+  </Link>
 
-            <Link to="/works" className="hero-secondary-btn">
-              View Our Work
-            </Link>
-          </div>
+  <Link to="/works" className="hero-secondary-btn">
+    View Our Work
+  </Link>
+</div>
         </div>
         <div className="hero-image">
   <img
