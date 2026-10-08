@@ -1,3 +1,7 @@
+/* =========================================
+   WORKS SECTION
+========================================= */
+
 .works-section {
   padding: 90px 24px;
   background: var(--light);
@@ -8,9 +12,10 @@
   margin: 0 auto;
 }
 
-/* =========================
+
+/* =========================================
    HEADING
-========================= */
+========================================= */
 
 .works-heading {
   max-width: 650px;
@@ -19,7 +24,9 @@
 
 .works-heading p {
   margin-bottom: 10px;
+
   color: var(--primary);
+
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 1.5px;
@@ -27,29 +34,34 @@
 
 .works-heading h2 {
   margin-bottom: 12px;
+
   color: var(--dark);
+
   font-size: 40px;
   line-height: 1.2;
 }
 
 .works-heading span {
   color: var(--text);
+
   font-size: 16px;
   line-height: 1.6;
 }
 
-/* =========================
+
+/* =========================================
    LOADING
-========================= */
+========================================= */
 
 .works-loading {
   color: var(--muted);
   font-size: 14px;
 }
 
-/* =========================
+
+/* =========================================
    WORKS GRID
-========================= */
+========================================= */
 
 .works-grid {
   display: grid;
@@ -57,82 +69,175 @@
   gap: 22px;
 }
 
-/* =========================
+
+/* =========================================
    WORK CARD
-========================= */
+========================================= */
 
 .work-card {
+  position: relative;
+
   overflow: hidden;
 
   background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 12px;
 
-  opacity: 0;
-  animation: workCardReveal 0.6s ease forwards;
-  animation-delay: calc(var(--card-index) * 0.08s);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  box-shadow:
+    0 4px 12px rgba(15, 23, 42, 0.04);
 
   transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s ease,
     border-color 0.3s ease;
+
+  will-change: transform;
 }
 
-.work-card:hover {
-  transform: translateY(-6px);
-  border-color: #cbd5e1;
-  box-shadow: 0 16px 35px rgba(15, 23, 42, 0.1);
+
+/* =========================================
+   CARD HOVER
+========================================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .work-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #cbd5e1;
+
+    box-shadow:
+      0 20px 40px rgba(15, 23, 42, 0.12);
+  }
 }
 
-/* =========================
+
+/* =========================================
    IMAGE
-========================= */
+========================================= */
 
 .work-image-placeholder {
+  position: relative;
+
   width: 100%;
   height: 210px;
+
   overflow: hidden;
+
   background: #e5e7eb;
+
+  will-change: transform;
 }
+
+
+/* =========================================
+   IMAGE
+========================================= */
 
 .work-image-placeholder img {
   width: 100%;
   height: 100%;
+
   display: block;
+
   object-fit: cover;
 
-  transition: transform 0.5s ease;
+  transition:
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.4s ease;
 }
 
-.work-card:hover .work-image-placeholder img {
-  transform: scale(1.05);
+
+/* =========================================
+   IMAGE HOVER
+========================================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .work-card:hover .work-image-placeholder img {
+    transform: scale(1.08);
+
+    filter: brightness(0.94);
+  }
 }
 
-/* =========================
+
+/* =========================================
+   IMAGE OVERLAY
+========================================= */
+
+.work-image-placeholder::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(15, 23, 42, 0) 50%,
+      rgba(15, 23, 42, 0.12) 100%
+    );
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition: opacity 0.4s ease;
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+
+  .work-card:hover .work-image-placeholder::after {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================
    CONTENT
-========================= */
+========================================= */
 
 .work-content {
   padding: 20px;
 }
 
+
 .work-content > p {
   margin-bottom: 8px;
 
   color: var(--primary);
+
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.6px;
+
   text-transform: uppercase;
 }
+
 
 .work-content h3 {
   margin-bottom: 12px;
 
   color: var(--dark);
+
   font-size: 19px;
   line-height: 1.35;
+
+  transition: color 0.25s ease;
 }
+
+
+@media (hover: hover) and (pointer: fine) {
+
+  .work-card:hover .work-content h3 {
+    color: var(--primary);
+  }
+}
+
 
 .work-content span {
   display: block;
@@ -140,12 +245,14 @@
   margin-bottom: 18px;
 
   color: var(--text);
+
   font-size: 14px;
 }
 
-/* =========================
+
+/* =========================================
    VIEW DETAILS BUTTON
-========================= */
+========================================= */
 
 .work-view-btn {
   display: inline-flex;
@@ -167,24 +274,46 @@
   transition:
     background 0.25s ease,
     color 0.25s ease,
-    transform 0.25s ease;
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-.work-view-btn:hover {
-  background: var(--primary);
-  color: var(--white);
-  transform: translateY(-2px);
+
+@media (hover: hover) and (pointer: fine) {
+
+  .work-view-btn:hover {
+    background: var(--primary);
+
+    color: var(--white);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+      0 6px 15px rgba(15, 23, 42, 0.12);
+  }
 }
 
-/* =========================
+
+/* =========================================
+   BUTTON PRESS
+========================================= */
+
+.work-view-btn:active {
+  transform: translateY(0) scale(0.97);
+}
+
+
+/* =========================================
    VIEW ALL WORKS
-========================= */
+========================================= */
 
 .works-view-all {
   display: flex;
   justify-content: center;
+
   margin-top: 40px;
 }
+
 
 .works-view-all-btn {
   display: inline-flex;
@@ -204,74 +333,92 @@
   text-decoration: none;
 
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
 }
 
-.works-view-all-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.15);
-}
 
-/* =========================
-   CARD REVEAL ANIMATION
-========================= */
+@media (hover: hover) and (pointer: fine) {
 
-@keyframes workCardReveal {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
+  .works-view-all-btn:hover {
+    transform: translateY(-3px);
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
+    box-shadow:
+      0 10px 24px rgba(15, 23, 42, 0.16);
   }
 }
 
-/* =========================
+
+.works-view-all-btn:active {
+  transform: translateY(0) scale(0.97);
+}
+
+
+/* =========================================
+   KEYBOARD ACCESSIBILITY
+========================================= */
+
+.work-view-btn:focus-visible,
+.works-view-all-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+
+/* =========================================
    TABLET
-========================= */
+========================================= */
 
 @media (max-width: 1000px) {
+
   .works-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* =========================
+
+/* =========================================
    MOBILE
-========================= */
+========================================= */
 
 @media (max-width: 600px) {
+
   .works-section {
     padding: 70px 18px;
   }
+
 
   .works-heading {
     margin-bottom: 32px;
   }
 
+
   .works-heading h2 {
     font-size: 32px;
   }
 
+
   .works-heading span {
     font-size: 15px;
   }
+
 
   .works-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
 
+
   .work-image-placeholder {
     height: 220px;
   }
 
+
   .work-content {
     padding: 18px;
   }
+
 
   .work-content h3 {
     font-size: 18px;
@@ -279,44 +426,42 @@
 }
 
 
-/* =========================
-   SMOOTH INTERACTION
-========================= */
+/* =========================================
+   SMALL MOBILE
+========================================= */
 
-.work-card {
-  will-change: transform;
+@media (max-width: 380px) {
+
+  .works-section {
+    padding: 60px 15px;
+  }
+
+
+  .work-image-placeholder {
+    height: 200px;
+  }
+
+
+  .work-content {
+    padding: 16px;
+  }
 }
 
-.work-image-placeholder {
-  will-change: transform;
-}
 
-.work-view-btn,
-.works-view-all-btn {
-  will-change: transform;
-}
-
-/* Smooth keyboard focus */
-.work-view-btn:focus-visible,
-.works-view-all-btn:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-}
-
-/* =========================
+/* =========================================
    REDUCED MOTION
-========================= */
+========================================= */
 
 @media (prefers-reduced-motion: reduce) {
-  .work-card {
-    animation: none;
-    opacity: 1;
-  }
 
   .work-card,
   .work-image-placeholder img,
   .work-view-btn,
   .works-view-all-btn {
+    transition: none;
+  }
+
+  .work-image-placeholder::after {
     transition: none;
   }
 }

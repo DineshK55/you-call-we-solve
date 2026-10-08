@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../firebase";
 import "./WorksSection.css";
+import ScrollReveal from "./ScrollReveal/ScrollReveal";
 
 function WorksSection() {
   const [works, setWorks] = useState([]);
@@ -38,60 +39,82 @@ function WorksSection() {
     <section className="works-section">
       <div className="works-container">
 
-        <div className="works-heading">
-          <p>OUR WORK</p>
+        {/* SECTION HEADING */}
+        <ScrollReveal>
+          <div className="works-heading">
+            <p>OUR WORK</p>
 
-<h2>Our Recent Work</h2>
+            <h2>Our Recent Work</h2>
 
-<span>
-  Electrical, plumbing, breaker machine & core cutting work we have
-  completed for different requirements.
-</span>
-        </div>
+            <span>
+              Electrical, plumbing, breaker machine & core cutting work we
+              have completed for different requirements.
+            </span>
+          </div>
+        </ScrollReveal>
 
+
+        {/* WORKS */}
         {loading ? (
           <p>Loading works...</p>
         ) : (
           <div className="works-grid">
+
             {works.map((work, index) => (
-              <div
-  className="work-card"
-  key={work.id}
-  style={{ "--card-index": index }}
->
+              <ScrollReveal
+                key={work.id}
+                delay={index * 120}
+              >
+                <div
+                  className="work-card"
+                  style={{ "--card-index": index }}
+                >
 
-                <div className="work-image-placeholder">
-                  <img
-                    src={work.thumbnailUrl}
-                    alt={work.title}
-                  />
+                  <div className="work-image-placeholder">
+                    <img
+                      src={work.thumbnailUrl}
+                      alt={work.title}
+                    />
+                  </div>
+
+                  <div className="work-content">
+
+                    <p>{work.service}</p>
+
+                    <h3>{work.title}</h3>
+
+                    <span>
+                      📍 {work.location}
+                    </span>
+
+                    <Link
+                      to={`/works/${work.id}`}
+                      className="work-view-btn"
+                    >
+                      View Details
+                    </Link>
+
+                  </div>
+
                 </div>
-
-                <div className="work-content">
-                  <p>{work.service}</p>
-
-                  <h3>{work.title}</h3>
-
-                  <span>📍 {work.location}</span>
-
-                  <Link
-                    to={`/works/${work.id}`}
-                    className="work-view-btn"
-                  >
-                    View Details
-                  </Link>
-                </div>
-
-              </div>
+              </ScrollReveal>
             ))}
+
           </div>
         )}
 
-                <div className="works-view-all">
-          <Link to="/works" className="works-view-all-btn">
-            View All Works
-          </Link>
-        </div>
+
+        {/* VIEW ALL */}
+        <ScrollReveal delay={200}>
+          <div className="works-view-all">
+            <Link
+              to="/works"
+              className="works-view-all-btn"
+            >
+              View All Works
+            </Link>
+          </div>
+        </ScrollReveal>
 
       </div>
     </section>

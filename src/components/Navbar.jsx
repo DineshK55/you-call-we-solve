@@ -1,63 +1,125 @@
 import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="navbar">
       <div className="navbar-container">
 
-        <Link to="/" className="navbar-logo">
+        {/* LOGO */}
+        <Link
+          to="/"
+          className="navbar-logo"
+          onClick={closeMenu}
+        >
           You Call We Solve
         </Link>
 
-        <nav className={`navbar-links ${isMenuOpen ? "active" : ""}`}>
-          <Link to="/" onClick={() => setIsMenuOpen(false)}>
+
+        {/* NAVIGATION */}
+        <nav
+          className={`navbar-links ${
+            isMenuOpen ? "active" : ""
+          }`}
+        >
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) =>
+              isActive ? "active" : ""
+            }
+            onClick={closeMenu}
+          >
             Home
-          </Link>
+          </NavLink>
 
-          <Link to="/services" onClick={() => setIsMenuOpen(false)}>
+          <NavLink
+            to="/services"
+            className={({ isActive }) =>
+              isActive ? "active" : ""
+            }
+            onClick={closeMenu}
+          >
             Services
-          </Link>
+          </NavLink>
 
-          <Link to="/works" onClick={() => setIsMenuOpen(false)}>
+          <NavLink
+            to="/works"
+            className={({ isActive }) =>
+              isActive ? "active" : ""
+            }
+            onClick={closeMenu}
+          >
             Our Works
-          </Link>
+          </NavLink>
 
-          <Link to="/about" onClick={() => setIsMenuOpen(false)}>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive ? "active" : ""
+            }
+            onClick={closeMenu}
+          >
             About
-          </Link>
+          </NavLink>
 
-          <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              isActive ? "active" : ""
+            }
+            onClick={closeMenu}
+          >
             Contact
-          </Link>
+          </NavLink>
         </nav>
 
-<div className="navbar-actions">
 
-  <a
-    href="https://wa.me/916379923436"
-    className="navbar-whatsapp"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <FaWhatsapp />
-    WhatsApp
-  </a>
+        {/* NAVBAR ACTIONS */}
+        <div className="navbar-actions">
 
-  <Link to="/contact" className="navbar-button">
-    Contact Us
-  </Link>
+          <a
+            href="https://wa.me/916379923436"
+            className="navbar-whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Contact us on WhatsApp"
+          >
+            <FaWhatsapp />
+            <span>WhatsApp</span>
+          </a>
 
-</div>
+          <Link
+            to="/contact"
+            className="navbar-button"
+            onClick={closeMenu}
+          >
+            Contact Us
+          </Link>
 
+        </div>
+
+
+        {/* MOBILE MENU BUTTON */}
         <button
-          className={`navbar-menu-button ${isMenuOpen ? "active" : ""}`}
+          type="button"
+          className={`navbar-menu-button ${
+            isMenuOpen ? "active" : ""
+          }`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle navigation menu"
+          aria-label={
+            isMenuOpen
+              ? "Close navigation menu"
+              : "Open navigation menu"
+          }
           aria-expanded={isMenuOpen}
         >
           <span></span>

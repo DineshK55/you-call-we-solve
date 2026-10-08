@@ -1,5 +1,6 @@
 import { FaQuoteLeft, FaStar } from "react-icons/fa";
 import "./Testimonials.css";
+import ScrollReveal from "../ScrollReveal/ScrollReveal";
 
 const testimonials = [
   {
@@ -7,28 +8,28 @@ const testimonials = [
     location: "Anthiyur",
     service: "Electrical Work",
     review:
-      "Electrical work-ku call pannom. Requirement-a correct-ah understand pannitu neat-ah work pannanga. Work mudinja apram place-um clean-ah irundhuchu. Good service.",
+      "We contacted them for electrical work. They understood our requirements clearly and completed the work neatly. The work area was also left clean after completion. Good service.",
   },
   {
     name: "Suresh",
     location: "Anthiyur",
     service: "Plumbing Work",
     review:
-      "Veetla plumbing problem irundhuchu. Contact pannadhum requirement ketu vandhu proper-ah check pannanga. Work satisfactory-ah mudichu kuduthanga.",
+      "We had a plumbing issue at home. They understood the problem, visited the location, and inspected it properly. The work was completed satisfactorily.",
   },
   {
     name: "Arun",
     location: "Nearby Area",
     service: "Breaker Machine Work",
     review:
-      "Construction work-ku breaker machine thevai pattuchu. Required work-ku machine work proper-ah pannanga. Overall service nalla irundhuchu.",
+      "We needed breaker machine services for construction work. The required work was completed properly and efficiently. Overall, the service was very good.",
   },
   {
     name: "Kumar",
     location: "Nearby Area",
     service: "Core Cutting Work",
     review:
-      "Core cutting work thevai irundhuchu. Work area-a check pannitu proper-ah cutting pannanga. Work neat-ah vandhuchu. Service-ku thanks.",
+      "We needed core cutting work for our project. They inspected the work area and completed the cutting accurately. The work was neat and professionally done. Thank you for the service.",
   },
 ];
 
@@ -41,68 +42,88 @@ function Testimonials() {
             SECTION HEADER
         ========================= */}
 
-        <div className="testimonials-header">
-          <span className="section-label">CUSTOMER FEEDBACK</span>
+        <ScrollReveal>
+          <div className="testimonials-header">
+            <span className="section-label">
+              CUSTOMER FEEDBACK
+            </span>
 
-          <h2>What Our Customers Say</h2>
+            <h2>What Our Customers Say</h2>
 
-          <p>
-            Engaloda service pathi customers share panra feedback
-            and experience.
-          </p>
-        </div>
+            <p>
+              Feedback and experiences shared by our customers about our
+              services.
+            </p>
+          </div>
+        </ScrollReveal>
+
 
         {/* =========================
             TESTIMONIALS
         ========================= */}
 
         <div className="testimonials-grid">
+
           {testimonials.map((testimonial, index) => (
-            <div className="testimonial-card" key={index}>
+            <ScrollReveal
+              key={index}
+              delay={index * 120}
+            >
+              <div className="testimonial-card">
 
-              {/* TOP ROW */}
+                {/* TOP ROW */}
 
-              <div className="testimonial-top">
-                <div className="quote-icon">
-                  <FaQuoteLeft />
+                <div className="testimonial-top">
+
+                  <div className="quote-icon">
+                    <FaQuoteLeft />
+                  </div>
+
+                  <div
+                    className="testimonial-stars"
+                    aria-label="5 star rating"
+                  >
+                    <FaStar />
+                    <FaStar />
+                    <FaStar />
+                    <FaStar />
+                    <FaStar />
+                  </div>
+
                 </div>
 
-                <div
-                  className="testimonial-stars"
-                  aria-label="5 star rating"
-                >
-                  <FaStar />
-                  <FaStar />
-                  <FaStar />
-                  <FaStar />
-                  <FaStar />
+
+                {/* REVIEW */}
+
+                <p className="testimonial-review">
+                  "{testimonial.review}"
+                </p>
+
+
+                {/* CUSTOMER */}
+
+                <div className="testimonial-author">
+
+                  <div className="testimonial-avatar">
+                    {testimonial.name.charAt(0)}
+                  </div>
+
+                  <div className="testimonial-author-info">
+
+                    <h3>{testimonial.name}</h3>
+
+                    <span>
+                      {testimonial.service} · {testimonial.location}
+                    </span>
+
+                  </div>
+
                 </div>
+
               </div>
-
-              {/* REVIEW */}
-
-              <p className="testimonial-review">
-                "{testimonial.review}"
-              </p>
-
-              {/* CUSTOMER */}
-
-              <div className="testimonial-author">
-                <div className="testimonial-avatar">
-                  {testimonial.name.charAt(0)}
-                </div>
-
-                <div className="testimonial-author-info">
-                  <h3>{testimonial.name}</h3>
-
-                  <span>
-                    {testimonial.service} · {testimonial.location}
-                  </span>
-                </div>
-              </div>
-
-            </div>
+            </ScrollReveal>
           ))}
+
         </div>
 
       </div>

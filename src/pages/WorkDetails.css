@@ -726,30 +726,36 @@
 .photo-lightbox {
   position: fixed;
   inset: 0;
-
-  z-index: 9999;
+  z-index: 99999;
 
   display: flex;
   flex-direction: column;
 
+  width: 100%;
+  height: 100dvh;
+  min-height: 0;
+
   background: rgba(2, 6, 23, 0.96);
+
+  overflow: hidden;
 
   animation: lightboxFade 0.3s ease both;
 }
-
 
 /* =========================================================
    LIGHTBOX HEADER
 ========================================================= */
 
 .photo-lightbox-header {
-  min-height: 72px;
+  flex: 0 0 auto;
+
+  min-height: 68px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 14px 24px;
+  padding: 12px 24px;
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.10);
 }
@@ -770,66 +776,77 @@
   font-size: 12px;
 }
 
-
-/* CLOSE */
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
 
 .photo-lightbox-close {
-  width: 40px;
-  height: 40px;
+  flex-shrink: 0;
+
+  width: 42px;
+  height: 42px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 50%;
 
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.10);
 
   color: var(--white);
 
-  font-size: 15px;
+  font-size: 16px;
 
   cursor: pointer;
 
   transition:
     background 0.25s ease,
-    transform 0.25s ease;
+    transform 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .photo-lightbox-close:hover {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.20);
+
+  border-color: rgba(255, 255, 255, 0.30);
 
   transform: rotate(90deg);
 }
-
 
 /* =========================================================
    LIGHTBOX CONTENT
 ========================================================= */
 
 .photo-lightbox-content {
-  flex: 1;
+  flex: 1 1 auto;
 
   min-height: 0;
+
+  position: relative;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  position: relative;
+  padding: 18px 80px;
 
-  padding: 25px 80px;
+  overflow: hidden;
 }
 
-
-/* LIGHTBOX IMAGE */
+/* =========================================================
+   LIGHTBOX IMAGE
+========================================================= */
 
 .photo-lightbox-image {
   position: relative;
 
-  width: min(900px, 85vw);
-  height: min(620px, 70vh);
+  width: min(820px, 78vw);
+
+  height: min(500px, 58dvh);
+
+  min-height: 0;
 
   display: flex;
   align-items: center;
@@ -837,10 +854,13 @@
 }
 
 .photo-lightbox-image img {
+  display: block;
+
+  width: auto;
+  height: auto;
+
   max-width: 100%;
   max-height: 100%;
-
-  display: block;
 
   object-fit: contain;
 
@@ -852,11 +872,13 @@
   animation: lightboxImageReveal 0.35s ease both;
 }
 
+/* IMAGE TYPE LABEL */
+
 .photo-lightbox-image span {
   position: absolute;
 
-  top: 14px;
-  left: 14px;
+  top: 12px;
+  left: 12px;
 
   padding: 7px 11px;
 
@@ -868,8 +890,9 @@
 
   font-size: 11px;
   font-weight: 700;
-}
 
+  pointer-events: none;
+}
 
 /* =========================================================
    LIGHTBOX ARROWS
@@ -877,10 +900,13 @@
 
 .photo-lightbox-arrow {
   position: absolute;
+
   top: 50%;
 
-  width: 46px;
-  height: 46px;
+  z-index: 5;
+
+  width: 44px;
+  height: 44px;
 
   display: flex;
   align-items: center;
@@ -907,6 +933,7 @@
 
 .photo-lightbox-arrow:hover {
   background: var(--primary);
+
   color: var(--white);
 
   transform: translateY(-50%) scale(1.08);
@@ -920,19 +947,26 @@
   right: 24px;
 }
 
-
 /* =========================================================
    LIGHTBOX THUMBNAILS
 ========================================================= */
 
 .photo-lightbox-thumbnails {
+  flex: 0 0 auto;
+
   display: flex;
   justify-content: center;
+
   gap: 8px;
 
-  overflow-x: auto;
+  width: 100%;
 
-  padding: 12px 20px 18px;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding: 10px 20px 16px;
+
+  scrollbar-width: thin;
 }
 
 .lightbox-thumbnail {
@@ -946,6 +980,7 @@
   overflow: hidden;
 
   border: 1px solid rgba(255, 255, 255, 0.20);
+
   border-radius: 6px;
 
   background: transparent;
@@ -984,58 +1019,9 @@
     0 0 0 2px rgba(107, 33, 168, 0.25);
 }
 
-
 /* =========================================================
    ANIMATIONS
 ========================================================= */
-
-@keyframes workInfoReveal {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes galleryReveal {
-  from {
-    opacity: 0;
-    transform: translateX(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes galleryImageReveal {
-  from {
-    opacity: 0;
-    transform: scale(0.98);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes workDescriptionReveal {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 @keyframes lightboxFade {
   from {
@@ -1059,19 +1045,168 @@
   }
 }
 
-@keyframes loadingSpin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
 /* =========================================================
    TABLET
 ========================================================= */
 
 @media (max-width: 1000px) {
+  .photo-lightbox-content {
+    padding: 16px 65px;
+  }
 
+  .photo-lightbox-image {
+    width: min(760px, 78vw);
+
+    height: min(460px, 56dvh);
+  }
+
+  .photo-lightbox-arrow.left {
+    left: 16px;
+  }
+
+  .photo-lightbox-arrow.right {
+    right: 16px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+  .photo-lightbox-header {
+    min-height: 60px;
+
+    padding: 10px 14px;
+  }
+
+  .photo-lightbox-header strong {
+    font-size: 14px;
+  }
+
+  .photo-lightbox-header span {
+    font-size: 11px;
+  }
+
+  .photo-lightbox-close {
+    width: 38px;
+    height: 38px;
+
+    font-size: 14px;
+  }
+
+  .photo-lightbox-content {
+    padding: 12px 52px;
+  }
+
+  .photo-lightbox-image {
+    width: 100%;
+
+    height: min(430px, 55dvh);
+  }
+
+  .photo-lightbox-arrow {
+    width: 38px;
+    height: 38px;
+
+    font-size: 13px;
+  }
+
+  .photo-lightbox-arrow.left {
+    left: 8px;
+  }
+
+  .photo-lightbox-arrow.right {
+    right: 8px;
+  }
+
+  .photo-lightbox-thumbnails {
+    justify-content: flex-start;
+
+    padding: 8px 14px 12px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .photo-lightbox-header {
+    min-height: 56px;
+
+    padding: 8px 12px;
+  }
+
+  .photo-lightbox-header strong {
+    font-size: 13px;
+  }
+
+  .photo-lightbox-close {
+    width: 36px;
+    height: 36px;
+  }
+
+  .photo-lightbox-content {
+    padding: 10px 44px;
+  }
+
+  .photo-lightbox-image {
+    height: min(360px, 52dvh);
+  }
+
+  .photo-lightbox-arrow {
+    width: 34px;
+    height: 34px;
+
+    font-size: 12px;
+  }
+
+  .photo-lightbox-arrow.left {
+    left: 5px;
+  }
+
+  .photo-lightbox-arrow.right {
+    right: 5px;
+  }
+
+  .lightbox-thumbnail {
+    width: 56px;
+    height: 43px;
+  }
+
+  .photo-lightbox-thumbnails {
+    gap: 6px;
+
+    padding: 7px 10px 10px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-lightbox,
+  .photo-lightbox-image img {
+    animation: none;
+  }
+
+  .photo-lightbox-close,
+  .photo-lightbox-arrow,
+  .lightbox-thumbnail {
+    transition: none;
+  }
+}
+
+
+/* =========================================================
+   WORK DETAILS RESPONSIVE FIX
+========================================================= */
+
+/* TABLET */
+
+@media (max-width: 1000px) {
   .work-details-layout {
     grid-template-columns: 320px minmax(0, 1fr);
     gap: 35px;
@@ -1084,16 +1219,12 @@
   .single-gallery-image {
     height: 380px;
   }
-
 }
 
 
-/* =========================================================
-   MOBILE
-========================================================= */
+/* MOBILE */
 
 @media (max-width: 760px) {
-
   .work-details {
     padding: 55px 18px 70px;
   }
@@ -1101,6 +1232,8 @@
   .work-details-back {
     margin-bottom: 30px;
   }
+
+  /* MAIN LAYOUT → ONE COLUMN */
 
   .work-details-layout {
     grid-template-columns: 1fr;
@@ -1120,23 +1253,19 @@
     padding: 20px;
   }
 
-
-  /* SELECTOR */
+  /* BEFORE / AFTER */
 
   .before-after-selector {
     justify-content: flex-start;
     margin-bottom: 10px;
   }
 
-
-  /* IMAGE */
+  /* MAIN IMAGE */
 
   .single-gallery-image {
     height: 320px;
-
     border-radius: 11px;
   }
-
 
   .single-gallery-arrow {
     width: 38px;
@@ -1151,7 +1280,6 @@
     right: 10px;
   }
 
-
   /* ALL PHOTOS */
 
   .gallery-all-photos {
@@ -1164,7 +1292,6 @@
     width: 100%;
   }
 
-
   /* DESCRIPTION */
 
   .work-description-section {
@@ -1172,46 +1299,60 @@
     padding: 22px;
   }
 
-
   /* LIGHTBOX */
 
   .photo-lightbox-header {
-    min-height: 64px;
+    min-height: 60px;
+    padding: 10px 14px;
+  }
 
-    padding: 12px 16px;
+  .photo-lightbox-header strong {
+    font-size: 14px;
+  }
+
+  .photo-lightbox-header span {
+    font-size: 11px;
+  }
+
+  .photo-lightbox-close {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
   }
 
   .photo-lightbox-content {
-    padding: 20px 55px;
+    padding: 12px 52px;
   }
 
   .photo-lightbox-image {
     width: 100%;
-    height: 62vh;
+    height: min(430px, 55dvh);
   }
 
   .photo-lightbox-arrow {
     width: 38px;
     height: 38px;
+    font-size: 13px;
   }
 
   .photo-lightbox-arrow.left {
-    left: 10px;
+    left: 8px;
   }
 
   .photo-lightbox-arrow.right {
-    right: 10px;
+    right: 8px;
   }
 
+  .photo-lightbox-thumbnails {
+    justify-content: flex-start;
+    padding: 8px 14px 12px;
+  }
 }
 
 
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
+/* SMALL MOBILE */
 
 @media (max-width: 480px) {
-
   .work-details {
     padding: 45px 14px 60px;
   }
@@ -1233,34 +1374,27 @@
     margin-bottom: 22px;
   }
 
-
   /* MAIN IMAGE */
 
   .single-gallery-image {
     height: 250px;
-
     border-radius: 9px;
   }
 
   .single-gallery-label {
     top: 10px;
     left: 10px;
-
     padding: 6px 9px;
-
     font-size: 10px;
   }
-
 
   /* ARROWS */
 
   .single-gallery-arrow {
     width: 34px;
     height: 34px;
-
     font-size: 12px;
   }
-
 
   /* THUMBNAILS */
 
@@ -1268,7 +1402,6 @@
     width: 62px;
     height: 46px;
   }
-
 
   /* DESCRIPTION */
 
@@ -1284,7 +1417,6 @@
     font-size: 13px;
   }
 
-
   /* WORK DESCRIPTION */
 
   .work-description-section {
@@ -1299,30 +1431,28 @@
     font-size: 13px;
   }
 
-
   /* LIGHTBOX */
 
   .photo-lightbox-content {
-    padding: 15px 45px;
+    padding: 10px 44px;
   }
 
   .photo-lightbox-image {
-    height: 58vh;
+    height: min(360px, 52dvh);
   }
 
   .photo-lightbox-arrow {
     width: 34px;
     height: 34px;
-
     font-size: 12px;
   }
 
   .photo-lightbox-arrow.left {
-    left: 6px;
+    left: 5px;
   }
 
   .photo-lightbox-arrow.right {
-    right: 6px;
+    right: 5px;
   }
 
   .lightbox-thumbnail {
@@ -1330,4 +1460,24 @@
     height: 43px;
   }
 
+  .photo-lightbox-thumbnails {
+    gap: 6px;
+    padding: 7px 10px 10px;
+  }
+}
+
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-lightbox,
+  .photo-lightbox-image img {
+    animation: none;
+  }
+
+  .photo-lightbox-close,
+  .photo-lightbox-arrow,
+  .lightbox-thumbnail {
+    transition: none;
+  }
 }

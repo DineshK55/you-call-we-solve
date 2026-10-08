@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO/SEO";
 import {
   FaBolt,
   FaWrench,
@@ -14,35 +15,44 @@ const services = [
     icon: <FaBolt />,
     title: "Electrical Work",
     description:
-      "Veedu, shop, office-ku electrical installation, wiring, repair & maintenance work.",
+  "Electrical installation, wiring, repair and maintenance services for homes, shops and offices.",
   },
   {
     image: "/images/plumbing-work.png",
     icon: <FaWrench />,
     title: "Plumbing Work",
     description:
-      "Water pipe work, leakage repair, bathroom plumbing & other plumbing requirements.",
+  "Water pipe installation, leakage repair, bathroom plumbing and other plumbing services.",
   },
   {
     image: "/images/breaker-machine-work.png",
     icon: <FaTools />,
     title: "Breaker Machine Work",
     description:
-      "Construction work-ku concrete breaking, wall breaking & demolition-related machine work.",
+  "Breaker machine services for concrete breaking, wall breaking and demolition-related work.",
   },
   {
     image: "/images/core-cutting-work.png",
     icon: <FaCircleNotch />,
     title: "Core Cutting Work",
     description:
-      "Concrete wall, slab & other construction requirements-ku accurate core cutting work.",
+  "Accurate core cutting services for concrete walls, slabs and other construction requirements.",
   },
 ];
 
 function Services() {
   return (
-    <section className="services-page">
+    <>
+      <SEO
+        title="Services | You Call We Solve"
+        description="Explore electrical, plumbing, breaker machine and core cutting services provided by You Call We Solve in Anthiyur and surrounding areas."
+      />
+
+      <section className="services-page">
       <div className="services-page-container">
+        
+
+        
 
         {/* =========================
             PAGE HEADING
@@ -54,9 +64,9 @@ function Services() {
           <h1>Our Services</h1>
 
           <p className="services-page-description">
-            Electrical, plumbing, breaker machine & core cutting work
-            thevaiya? Ungaloda requirement-ku engala contact pannunga.
-          </p>
+  Need electrical, plumbing, breaker machine, or core cutting services?
+  Contact us to discuss your requirements.
+</p>
         </div>
 
         {/* =========================
@@ -110,12 +120,12 @@ function Services() {
           <div className="services-page-cta-content">
             <p>NEED SERVICE?</p>
 
-            <h2>Work Thevaiya? Engala Contact Pannunga.</h2>
+            <h2>Need Service? Contact Us Today.</h2>
 
             <span>
-              Ungaloda requirement-a share pannunga. Thevaiyana
-              service-ku naanga help panna ready-ah irukom.
-            </span>
+  Share your requirements with us. We are ready to provide
+  reliable and professional service.
+</span>
           </div>
 
           <Link
@@ -128,7 +138,8 @@ function Services() {
         </div>
 
       </div>
-    </section>
+          </section>
+    </>
   );
 }
 

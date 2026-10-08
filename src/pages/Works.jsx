@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../firebase";
+import SEO from "../components/SEO/SEO";
 import "./Works.css";
+
 
 function Works() {
   const [works, setWorks] = useState([]);
@@ -35,6 +37,12 @@ function Works() {
   }, []);
 
   return (
+  <>
+    <SEO
+      title="Our Works | You Call We Solve"
+      description="View completed electrical, plumbing, breaker machine and core cutting work by You Call We Solve in Anthiyur and surrounding areas."
+    />
+
     <section className="works-page">
       <div className="works-page-container">
 
@@ -90,8 +98,8 @@ function Works() {
         )}
 
       </div>
-    </section>
+       </section>
+  </>
   );
 }
-
 export default Works;

@@ -5,6 +5,7 @@ import {
   FaEnvelope,
   FaArrowRight,
 } from "react-icons/fa";
+import SEO from "../components/SEO/SEO";
 import "./Contact.css";
 
 const WHATSAPP_NUMBER = "916379923436";
@@ -46,7 +47,13 @@ Please contact me regarding this work requirement.
   };
 
   return (
-    <section className="contact-page">
+    <>
+      <SEO
+        title="Contact Us | You Call We Solve"
+        description="Contact You Call We Solve for electrical, plumbing, breaker machine and core cutting services in Anthiyur and surrounding areas. Share your requirements with us."
+      />
+
+      <section className="contact-page">
       <div className="contact-page-container">
 
         {/* =========================
@@ -57,16 +64,16 @@ Please contact me regarding this work requirement.
           <p>GET IN TOUCH</p>
 
           <h1>
-            Work Thevaiya?
-            <br />
-            Engala Contact Pannunga.
-          </h1>
+  Need a Service?
+  <br />
+  Contact Us Today.
+</h1>
 
           <span>
-            Electrical, plumbing, breaker machine & core cutting work
-            thevaiya? Ungaloda requirement-a share pannunga.
-            Naanga help panna ready-ah irukom.
-          </span>
+  Need electrical, plumbing, breaker machine, or core cutting services?
+  Share your requirements with us. We are ready to provide reliable
+  and professional service.
+</span>
         </div>
 
 
@@ -86,8 +93,8 @@ Please contact me regarding this work requirement.
               <span>CONTACT DETAILS</span>
 
               <h2>
-                Pesunga, Work Discuss Pannalam.
-              </h2>
+  We’re Ready to Discuss Your Requirements.
+</h2>
             </div>
 
 
@@ -141,8 +148,8 @@ Please contact me regarding this work requirement.
                 <h3>WhatsApp</h3>
 
                 <p>
-                  Work details-a WhatsApp-la share pannunga.
-                </p>
+  Share your work requirements with us on WhatsApp.
+</p>
               </div>
 
             </a>
@@ -212,9 +219,9 @@ Please contact me regarding this work requirement.
               </h2>
 
               <p>
-                Konjam details share pannunga. Ungaloda requirement
-                understand pannitu next step discuss pannalam.
-              </p>
+  Share a few details about your requirements so we can understand
+  the work and discuss the next steps with you.
+</p>
 
             </div>
 
@@ -322,7 +329,7 @@ Please contact me regarding this work requirement.
                   id="message"
                   name="message"
                   rows="5"
-                  placeholder="Ungaloda work requirement-a inga type pannunga..."
+                  placeholder="Describe your work requirements..."
                   required
                 ></textarea>
 
@@ -346,8 +353,8 @@ Please contact me regarding this work requirement.
 
 
               <p className="contact-form-note">
-                WhatsApp-la requirement details open aagum.
-              </p>
+  Your requirement details will open in WhatsApp.
+</p>
 
             </form>
 
@@ -369,13 +376,13 @@ Please contact me regarding this work requirement.
             </span>
 
             <h2>
-              Work Thevaiya? Engala Contact Pannunga.
-            </h2>
+  Need a Service? Contact Us Today.
+</h2>
 
             <p>
-              Ungaloda requirement-a share pannunga.
-              Thevaiyana service-ku naanga help panna ready-ah irukom.
-            </p>
+  Share your requirements with us. We are ready to provide
+  reliable and professional service.
+</p>
 
           </div>
 
@@ -405,7 +412,8 @@ Please contact me regarding this work requirement.
         </div>
 
       </div>
-    </section>
+          </section>
+    </>
   );
 }
 

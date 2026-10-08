@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link, useParams } from "react-router-dom";
 
 import {
@@ -13,6 +14,7 @@ import {
 
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
+import SEO from "../components/SEO/SEO";
 
 import "./WorkDetails.css";
 
@@ -295,8 +297,13 @@ function WorkDetails() {
   ========================= */
 
   return (
-    <>
-      <section className="work-details">
+  <>
+    <SEO
+      title={`${work.title} | You Call We Solve`}
+      description={`${work.service} completed by You Call We Solve in ${work.location}. View project details, completed work and project photos.`}
+    />
+
+    <section className="work-details">
 
         <div className="work-details-container">
 
@@ -646,9 +653,9 @@ function WorkDetails() {
       ================================================= */}
 
       {showAllPhotos &&
-        allPhotos.length > 0 && (
-
-          <div className="photo-lightbox">
+  allPhotos.length > 0 &&
+  createPortal(
+    <div className="photo-lightbox">
 
 
             {/* =========================
@@ -773,9 +780,9 @@ function WorkDetails() {
 
             </div>
 
-          </div>
-
-        )}
+               </div>,
+    document.body
+  )}
 
     </>
   );

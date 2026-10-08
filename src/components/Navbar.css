@@ -1,98 +1,260 @@
+/* =========================
+   NAVBAR
+========================= */
+
 .navbar {
-  width: 100%;
-  background-color: var(--white);
-  border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
   z-index: 1000;
+
+  width: 100%;
+
+  background-color: rgba(255, 255, 255, 0.96);
+
+  border-bottom: 1px solid var(--border);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  animation: navbarEnter 0.5s ease-out both;
 }
+
+
+/* =========================
+   NAVBAR CONTAINER
+========================= */
 
 .navbar-container {
   max-width: var(--container);
   margin: 0 auto;
+
   padding: 14px 24px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   gap: 30px;
 }
 
+
+/* =========================
+   LOGO
+========================= */
+
 .navbar-logo {
+  position: relative;
+
+  color: var(--dark);
+
   font-size: 20px;
   font-weight: 700;
-  color: var(--dark);
+
   white-space: nowrap;
+
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
 }
+
+.navbar-logo:hover {
+  color: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+
+/* =========================
+   DESKTOP NAVIGATION
+========================= */
 
 .navbar-links {
   display: flex;
   align-items: center;
+
   gap: 24px;
 }
 
 .navbar-links a {
   position: relative;
+
   padding: 6px 2px;
+
   color: var(--text);
+
   font-size: 15px;
   font-weight: 500;
+
+  text-decoration: none;
+
   transition:
-    color 0.2s ease,
-    transform 0.2s ease;
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
-.navbar-links a:hover {
-  color: var(--accent);
-  transform: translateY(-1px);
-}
 
-.navbar-button {
-  padding: 9px 17px;
+/* =========================
+   NAV LINK UNDERLINE
+========================= */
+
+.navbar-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 2px;
+
   background-color: var(--accent);
-  color: var(--dark);
-  border-radius: var(--radius-sm);
-  font-size: 14px;
-  font-weight: 600;
+
+  border-radius: 999px;
+
+  transform: scaleX(0);
+  transform-origin: center;
+
   transition:
-    background-color 0.2s ease,
-    transform 0.2s ease;
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.navbar-button:hover {
-  background-color: var(--accent-dark);
-  transform: translateY(-1px);
+
+/* HOVER */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .navbar-links a:hover {
+    color: var(--accent-dark);
+
+    transform: translateY(-1px);
+  }
+
+  .navbar-links a:hover::after {
+    transform: scaleX(1);
+  }
 }
 
-.navbar-whatsapp {
-  padding: 9px 17px;
-  border: 1px solid #25d366;
-  border-radius: var(--radius-sm);
-  color: #128c4a;
-  background-color: transparent;
-  font-size: 14px;
-  font-weight: 600;
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
+
+/* ACTIVE PAGE */
+
+.navbar-links a.active {
+  color: var(--accent-dark);
 }
 
-.navbar-whatsapp:hover {
-  background-color: #25d366;
-  color: var(--white);
-  transform: translateY(-1px);
+.navbar-links a.active::after {
+  transform: scaleX(1);
 }
+
+
+/* =========================
+   NAVBAR ACTIONS
+========================= */
 
 .navbar-actions {
   display: flex;
   align-items: center;
+
   gap: 12px;
 }
+
+
+/* =========================
+   WHATSAPP
+========================= */
 
 .navbar-whatsapp {
   display: inline-flex;
   align-items: center;
+
   gap: 7px;
+
+  padding: 9px 17px;
+
+  border: 1px solid #25d366;
+  border-radius: var(--radius-sm);
+
+  color: #128c4a;
+  background-color: transparent;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+
+  .navbar-whatsapp:hover {
+    background-color: #25d366;
+
+    color: var(--white);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+      0 8px 18px rgba(37, 211, 102, 0.18);
+  }
+}
+
+
+/* =========================
+   CONTACT BUTTON
+========================= */
+
+.navbar-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 9px 17px;
+
+  background-color: var(--accent);
+
+  color: var(--dark);
+
+  border-radius: var(--radius-sm);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+
+  .navbar-button:hover {
+    background-color: var(--accent-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+      0 8px 18px rgba(15, 23, 42, 0.1);
+  }
+}
+
+
+/* =========================
+   BUTTON PRESS
+========================= */
+
+.navbar-button:active,
+.navbar-whatsapp:active {
+  transform: translateY(0) scale(0.97);
 }
 
 
@@ -102,24 +264,45 @@
 
 .navbar-menu-button {
   display: none;
+
   width: 42px;
   height: 42px;
+
   align-items: center;
   justify-content: center;
+
   flex-direction: column;
+
   gap: 5px;
+
+  padding: 0;
+
   background: transparent;
+
+  border: none;
+
+  cursor: pointer;
 }
+
 
 .navbar-menu-button span {
   width: 22px;
   height: 2px;
+
   background-color: var(--dark);
+
   border-radius: 2px;
+
   transition:
-    transform 0.3s ease,
-    opacity 0.2s ease;
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.2s ease,
+    width 0.25s ease;
 }
+
+
+/* =========================
+   HAMBURGER → X
+========================= */
 
 .navbar-menu-button.active span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
@@ -127,6 +310,8 @@
 
 .navbar-menu-button.active span:nth-child(2) {
   opacity: 0;
+
+  width: 0;
 }
 
 .navbar-menu-button.active span:nth-child(3) {
@@ -134,69 +319,242 @@
 }
 
 
+/* =========================
+   FOCUS
+========================= */
+
+.navbar-menu-button:focus-visible,
+.navbar-logo:focus-visible,
+.navbar-links a:focus-visible,
+.navbar-button:focus-visible,
+.navbar-whatsapp:focus-visible {
+  outline: 2px solid var(--accent);
+
+  outline-offset: 4px;
+
+  border-radius: 4px;
+}
+
+
+/* =========================
+   NAVBAR ENTRANCE
+========================= */
+
+@keyframes navbarEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 768px) {
+
   .navbar-container {
     padding: 15px 18px;
   }
 
-.navbar-links {
-  display: flex;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  max-height: 0;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0;
-  padding: 0 18px;
-  overflow: hidden;
-  opacity: 0;
-  visibility: hidden;
-  background-color: var(--white);
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
-  transition:
-    max-height 0.3s ease,
-    opacity 0.25s ease,
-    padding 0.3s ease,
-    border-color 0.3s ease;
-}
 
-.navbar-button,
-.navbar-whatsapp {
-  display: none;
-}
+  /* MOBILE NAVIGATION */
 
-.navbar-links.active {
-  max-height: 350px;
-  padding: 10px 18px 18px;
-  opacity: 1;
-  visibility: visible;
-  border-top-color: var(--border);
-  border-bottom-color: var(--border);
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
-}
+  .navbar-links {
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+
+    max-height: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 0;
+
+    padding: 0 18px;
+
+    overflow: hidden;
+
+    opacity: 0;
+    visibility: hidden;
+
+    background-color: rgba(255, 255, 255, 0.98);
+
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0);
+
+    transition:
+      max-height 0.45s ease,
+      opacity 0.3s ease,
+      padding 0.4s ease,
+      border-color 0.3s ease,
+      box-shadow 0.4s ease;
+  }
+
+
+  /* MOBILE OPEN */
+
+  .navbar-links.active {
+    max-height: 350px;
+
+    padding: 10px 18px 18px;
+
+    opacity: 1;
+    visibility: visible;
+
+    border-top-color: var(--border);
+    border-bottom-color: var(--border);
+
+    box-shadow:
+      0 12px 25px rgba(15, 23, 42, 0.08);
+  }
+
+
+  /* MOBILE LINKS */
+
+  .navbar-links a {
+    width: 100%;
+
+    padding: 12px 0;
+
+    color: var(--text);
+
+    font-size: 14px;
+    font-weight: 500;
+
+    border-bottom: 1px solid var(--border);
+
+    opacity: 0;
+
+    transform: translateY(-8px);
+
+    transition:
+      color 0.25s ease,
+      opacity 0.3s ease,
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+
+  .navbar-links a::after {
+    display: none;
+  }
+
+
+  .navbar-links a:last-child {
+    border-bottom: none;
+  }
+
+
+  /* STAGGER MOBILE LINKS */
+
+  .navbar-links.active a {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+
+  .navbar-links.active a:nth-child(1) {
+    transition-delay: 0.05s;
+  }
+
+  .navbar-links.active a:nth-child(2) {
+    transition-delay: 0.1s;
+  }
+
+  .navbar-links.active a:nth-child(3) {
+    transition-delay: 0.15s;
+  }
+
+  .navbar-links.active a:nth-child(4) {
+    transition-delay: 0.2s;
+  }
+
+  .navbar-links.active a:nth-child(5) {
+    transition-delay: 0.25s;
+  }
+
+
+  /* MOBILE HOVER / ACTIVE */
+
+  .navbar-links a.active {
+    color: var(--accent-dark);
+  }
+
+
+  .navbar-links a:hover {
+    color: var(--accent-dark);
+  }
+
+
+  /* HIDE DESKTOP ACTIONS */
+
+  .navbar-button,
+  .navbar-whatsapp {
+    display: none;
+  }
+
+
+  /* SHOW MENU BUTTON */
 
   .navbar-menu-button {
     display: flex;
   }
-
-  .navbar-links a {
-  width: 100%;
-  padding: 11px 0;
-  color: var(--text);
-  font-size: 14px;
-  font-weight: 500;
-  border-bottom: 1px solid var(--border);
 }
 
-.navbar-links a:last-child {
-  border-bottom: none;
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+  .navbar-container {
+    padding: 14px 15px;
+  }
+
+  .navbar-logo {
+    font-size: 18px;
+  }
+
+  .navbar-menu-button {
+    width: 40px;
+    height: 40px;
+  }
 }
 
-.navbar-links a:hover {
-  color: var(--accent);
-}
-}
 
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .navbar {
+    animation: none;
+  }
+
+  .navbar-links,
+  .navbar-links a,
+  .navbar-menu-button span,
+  .navbar-logo,
+  .navbar-button,
+  .navbar-whatsapp {
+    transition: none;
+  }
+}
