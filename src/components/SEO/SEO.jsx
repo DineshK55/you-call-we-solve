@@ -16,10 +16,10 @@ function SEO({ title, description }) {
 
     metaDescription.setAttribute("content", description);
 
-    return () => {
-      document.title =
-        "You Call We Solve | Electrical, Plumbing & Machine Services";
-    };
+   return () => {
+  document.title =
+    "Electrical, Plumbing & Machine Work | You Call We Solve";
+};
   }, [title, description]);
 
   return null;
