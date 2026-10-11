@@ -6,7 +6,7 @@ import {
   FaScrewdriverWrench,
   FaCircleDot,
 } from "react-icons/fa6";
-import logo from "../assets/logo.png";
+import logo from "../assets/Logo.png";
 import "./Footer.css";
 
 function Footer() {
