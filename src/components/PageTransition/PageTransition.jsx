@@ -7,17 +7,21 @@ function PageTransition({ children }) {
   useEffect(() => {
     setIsVisible(false);
 
-    const timer = setTimeout(() => {
+    const frame = requestAnimationFrame(() => {
       setIsVisible(true);
-    }, 50);
+    });
 
     return () => {
-      clearTimeout(timer);
+      cancelAnimationFrame(frame);
     };
   }, []);
 
   return (
-    <div className={`page-transition ${isVisible ? "page-transition-visible" : ""}`}>
+    <div
+      className={`page-transition ${
+        isVisible ? "page-transition-visible" : ""
+      }`}
+    >
       {children}
     </div>
   );

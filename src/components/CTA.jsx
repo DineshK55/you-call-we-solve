@@ -16,7 +16,7 @@ function CTA() {
             <h2>Need Service? Contact Us Today.</h2>
 
             <span>
-              Need electrical, plumbing, breaker machine, or core cutting
+              Need electrical, plumbing, breaker machine and core cutting
               services? Share your requirements with us. We are ready to
               provide reliable and professional service.
             </span>
@@ -39,15 +39,18 @@ function CTA() {
 
 
           <ScrollReveal delay={300}>
-            <a
-              href="https://wa.me/919999999999"
-              className="cta-whatsapp-btn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaWhatsapp />
-              WhatsApp Us
-            </a>
+            
+<a
+  href="https://wa.me/917904180076?text=Hello%2C%20I%20need%20your%20service."
+  className="cta-whatsapp-btn"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Contact You Call We Solve on WhatsApp"
+>
+  <FaWhatsapp aria-hidden="true" />
+  WhatsApp Us
+</a>
+
           </ScrollReveal>
 
         </div>

@@ -10,6 +10,10 @@ import WorkDetails from "../pages/WorkDetails";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
 
+import PrivacyPolicy from "../pages/PrivacyPolicy";
+import Terms from "../pages/Terms";
+import Sitemap from "../pages/Sitemap";
+
 import AdminLogin from "../pages/AdminLogin";
 import AdminDashboard from "../pages/AdminDashboard";
 import AddWork from "../pages/Admin/AddWork";
@@ -31,6 +35,9 @@ function AppRoutes() {
         <Route path="/works/:id" element={<WorkDetails />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/sitemap" element={<Sitemap />} />
       </Route>
 
       {/* Admin Website */}

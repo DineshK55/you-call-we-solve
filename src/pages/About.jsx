@@ -188,7 +188,7 @@ function About() {
           <div>
             <span>SERVICE AREA</span>
 
-            <h2>Serving Anthiyur &amp; Surrounding Areas</h2>
+            <h2>Serving Erode &amp; Anthiyur Surrounding Areas</h2>
 
             <p>
               Murugan Electricals provides electrical, plumbing, breaker
@@ -198,6 +198,23 @@ function About() {
           </div>
 
         </div>
+
+        
+<div className="about-contact-cta">
+  <div>
+    <h2>Need Help With Your Next Project?</h2>
+    <p>
+      Contact Murugan Electricals to discuss your electrical,
+      plumbing, breaker machine and core cutting requirements.
+    </p>
+  </div>
+
+  <a href="/contact" className="about-contact-btn">
+    Contact Us
+    <span aria-hidden="true">→</span>
+  </a>
+</div>
+
 
       </div>
          </section>

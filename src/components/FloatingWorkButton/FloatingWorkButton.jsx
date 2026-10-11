@@ -9,16 +9,14 @@ function FloatingWorkButton() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 250) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 250);
     };
 
-    window.addEventListener("scroll", handleScroll);
-
     handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -31,17 +29,15 @@ function FloatingWorkButton() {
       className={`floating-work-button ${
         isScrolled ? "floating-work-button-visible" : ""
       }`}
-      aria-label="View our work"
+      aria-label="View our completed work"
+      tabIndex={isScrolled ? 0 : -1}
+      aria-hidden={!isScrolled}
     >
-      <span className="floating-work-label">
-        OUR WORK
-      </span>
+      <span className="floating-work-label">OUR WORK</span>
 
-      <span className="floating-work-text">
-        View Our Work
-      </span>
+      <span className="floating-work-text">View Our Work</span>
 
-      <span className="floating-work-arrow">
+      <span className="floating-work-arrow" aria-hidden="true">
         <FaArrowRight />
       </span>
     </Link>,

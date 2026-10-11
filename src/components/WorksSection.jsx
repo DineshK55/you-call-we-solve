@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { FaLocationDot } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../firebase";
@@ -56,7 +57,7 @@ function WorksSection() {
 
         {/* WORKS */}
         {loading ? (
-          <p>Loading works...</p>
+          <p className="works-loading">Loading our recent work...</p>
         ) : (
           <div className="works-grid">
 
@@ -72,9 +73,11 @@ function WorksSection() {
 
                   <div className="work-image-placeholder">
                     <img
-                      src={work.thumbnailUrl}
-                      alt={work.title}
-                    />
+  src={work.thumbnailUrl}
+  alt={`${work.title} - ${work.service} in ${work.location}`}
+  loading="lazy"
+  decoding="async"
+/>
                   </div>
 
                   <div className="work-content">
@@ -83,9 +86,10 @@ function WorksSection() {
 
                     <h3>{work.title}</h3>
 
-                    <span>
-                      📍 {work.location}
-                    </span>
+                    <span className="work-location">
+  <FaLocationDot aria-hidden="true" />
+  {work.location}
+</span>
 
                     <Link
                       to={`/works/${work.id}`}

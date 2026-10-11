@@ -250,25 +250,25 @@
 
 
 /* =========================
-   HERO IMAGE LIGHT
+   HERO IMAGE AMBIENT GLOW
 ========================= */
 
 .hero-image::before {
   content: "";
 
   position: absolute;
-
-  top: 18%;
-  left: 8%;
-
-  width: 85%;
-  height: 65%;
+  inset: 8%;
 
   background:
     radial-gradient(
-      circle at 35% 50%,
-      rgba(245, 158, 11, 0.22),
-      transparent 25%
+      circle at 35% 45%,
+      rgba(220, 38, 38, 0.16),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 70% 65%,
+      rgba(22, 163, 74, 0.10),
+      transparent 30%
     );
 
   opacity: 0;
@@ -277,39 +277,108 @@
 
   pointer-events: none;
 
-  animation: electricGlow 5s ease-in-out infinite;
+  animation: heroAmbientGlow 7s ease-in-out infinite;
+}
+
+
+
+/* =========================
+   PROFESSIONAL SERVICE HIGHLIGHTS
+========================= */
+
+.hero-icon-highlight {
+  position: absolute;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 9px;
+
+  pointer-events: none;
+  z-index: 4;
+
+  opacity: 0;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.75) 0%,
+      rgba(245, 158, 11, 0.45) 28%,
+      rgba(245, 158, 11, 0.12) 52%,
+      transparent 72%
+    );
+
+  filter: blur(1px);
+
+  animation: serviceHighlight 8s ease-in-out infinite;
+}
+
+
+/* Electrical Work */
+.hero-highlight-electrical {
+  top: 17.5%;
+  right: 24.5%;
+  animation-delay: 0s;
+}
+
+
+/* Plumbing Work */
+.hero-highlight-plumbing {
+  top: 39%;
+  right: 24.5%;
+  animation-delay: 2s;
+}
+
+
+/* Breaker Machine Work */
+.hero-highlight-breaker {
+  top: 60.5%;
+  right: 24.5%;
+  animation-delay: 4s;
+}
+
+
+/* Core Cutting Work */
+.hero-highlight-core {
+  top: 82%;
+  right: 24.5%;
+  animation-delay: 6s;
 }
 
 
 /* =========================
-   ELECTRIC FLASH
+   SERVICE HIGHLIGHT ANIMATION
 ========================= */
 
-.hero-image::after {
-  content: "⚡";
+@keyframes serviceHighlight {
 
-  position: absolute;
+  0%,
+  18%,
+  100% {
+    opacity: 0;
+    transform: scale(0.75);
+  }
 
-  top: 22%;
-  right: 18%;
+  22% {
+    opacity: 0.15;
+    transform: scale(0.9);
+  }
 
-  color: var(--accent);
+  26% {
+    opacity: 0.75;
+    transform: scale(1);
+  }
 
-  font-size: 48px;
+  30% {
+    opacity: 0.35;
+    transform: scale(1.12);
+  }
 
-  filter:
-    drop-shadow(0 0 5px rgba(245, 158, 11, 0.9))
-    drop-shadow(0 0 15px rgba(245, 158, 11, 0.7));
-
-  opacity: 0;
-
-  z-index: 3;
-
-  pointer-events: none;
-
-  animation: electricFlash 5s ease-in-out infinite;
+  35% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
 }
-
 
 /* =========================
    HERO ENTRANCE ANIMATIONS
@@ -482,11 +551,16 @@
   overflow: hidden;
 
   background:
-    radial-gradient(
-      ellipse at 50% 15%,
-      rgba(56, 189, 248, 0.10),
-      transparent 55%
-    );
+  radial-gradient(
+    ellipse at 50% 15%,
+    rgba(220, 38, 38, 0.07),
+    transparent 55%
+  ),
+  radial-gradient(
+    ellipse at 75% 35%,
+    rgba(22, 163, 74, 0.045),
+    transparent 50%
+  );
 }
 
 
@@ -502,12 +576,16 @@
    MAIN LIGHTNING
 ========================= */
 
+/* =========================
+   MAIN ELECTRIC LINE
+========================= */
+
 .bolt {
   fill: none;
 
-  stroke: #dff8ff;
+  stroke: #ffffff;
 
-  stroke-width: 2.5;
+  stroke-width: 2;
 
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -516,60 +594,61 @@
 
   filter:
     drop-shadow(0 0 3px #ffffff)
-    drop-shadow(0 0 8px #38bdf8)
-    drop-shadow(0 0 18px rgba(14, 165, 233, 0.7));
+    drop-shadow(0 0 8px rgba(220, 38, 38, 0.8))
+    drop-shadow(0 0 18px rgba(220, 38, 38, 0.35));
 
   stroke-dasharray: 900 1600;
   stroke-dashoffset: 2500;
 
   animation:
-    naturalThunder 6s ease-in-out infinite;
+    naturalThunder 7s ease-in-out infinite;
 }
-
 
 /* =========================
    SECONDARY BRANCHES
 ========================= */
 
-.bolt-2 {
-  stroke: #7dd3fc;
+/* =========================
+   SECONDARY ELECTRIC BRANCHES
+========================= */
 
-  stroke-width: 1.8;
+.bolt-2 {
+  stroke: #fecaca;
+
+  stroke-width: 1.5;
 
   filter:
-    drop-shadow(0 0 4px #38bdf8)
-    drop-shadow(0 0 10px rgba(14, 165, 233, 0.6));
+    drop-shadow(0 0 4px rgba(220, 38, 38, 0.7))
+    drop-shadow(0 0 10px rgba(220, 38, 38, 0.35));
 
   stroke-dasharray: 180 500;
   stroke-dashoffset: 600;
 
   animation:
-    branchThunder 6s ease-in-out infinite;
+    branchThunder 7s ease-in-out infinite;
 }
 
-
 /* =========================
-   FINE CRACKS
+   FINE ELECTRIC CRACKS
 ========================= */
 
 .bolt-fine {
   fill: none;
 
-  stroke: #bae6fd;
+  stroke: #dcfce7;
 
-  stroke-width: 1.2;
+  stroke-width: 1.1;
 
   stroke-linecap: round;
 
   opacity: 0;
 
   filter:
-    drop-shadow(0 0 4px #38bdf8);
+    drop-shadow(0 0 4px rgba(22, 163, 74, 0.65));
 
   animation:
-    fineFlash 6s ease-in-out infinite;
+    fineFlash 7s ease-in-out infinite;
 }
-
 
 /* =========================
    NATURAL THUNDER
@@ -582,43 +661,35 @@
     stroke-dashoffset: 2500;
   }
 
-  20% {
+  22% {
     opacity: 0;
   }
 
-  27% {
-    opacity: 0.75;
+  30% {
+    opacity: 0.55;
     stroke-dashoffset: 1500;
   }
 
-  31% {
-    opacity: 0.25;
-  }
-
   34% {
-    opacity: 0.9;
+    opacity: 0.2;
   }
 
-  42% {
-    opacity: 0.7;
+  38% {
+    opacity: 0.65;
+  }
+
+  48% {
+    opacity: 0.4;
     stroke-dashoffset: 700;
   }
 
-  50% {
-    opacity: 0.35;
-  }
-
-  55% {
-    opacity: 0.8;
+  58% {
+    opacity: 0.55;
     stroke-dashoffset: 0;
   }
 
-  61% {
+  66% {
     opacity: 0.15;
-  }
-
-  65% {
-    opacity: 0.65;
   }
 
   72% {
@@ -631,7 +702,6 @@
   }
 }
 
-
 /* =========================
    BRANCH FLICKER
 ========================= */
@@ -639,42 +709,37 @@
 @keyframes branchThunder {
 
   0%,
-  20% {
+  22% {
     opacity: 0;
     stroke-dashoffset: 600;
   }
 
-  29% {
-    opacity: 0.8;
-  }
-
-  33% {
-    opacity: 0.15;
+  31% {
+    opacity: 0.5;
   }
 
   36% {
-    opacity: 0.75;
+    opacity: 0.15;
   }
 
-  48% {
-    opacity: 0.5;
+  41% {
+    opacity: 0.55;
+  }
+
+  52% {
+    opacity: 0.3;
     stroke-dashoffset: 0;
   }
 
-  58% {
-    opacity: 0.25;
+  62% {
+    opacity: 0.15;
   }
 
-  65% {
-    opacity: 0;
-  }
-
+  70%,
   100% {
     opacity: 0;
   }
 }
-
-
 /* =========================
    SMALL ELECTRIC CRACKS
 ========================= */
@@ -682,30 +747,57 @@
 @keyframes fineFlash {
 
   0%,
-  25% {
+  28% {
     opacity: 0;
   }
 
-  31% {
-    opacity: 0.7;
+  35% {
+    opacity: 0.45;
   }
 
-  34% {
-    opacity: 0.15;
-  }
-
-  38% {
-    opacity: 0.55;
+  40% {
+    opacity: 0.12;
   }
 
   46% {
-    opacity: 0;
+    opacity: 0.4;
   }
 
+  55%,
   100% {
     opacity: 0;
   }
 }
+
+
+/* =========================
+   AMBIENT BRAND GLOW
+========================= */
+
+@keyframes heroAmbientGlow {
+
+  0%,
+  65%,
+  100% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  72% {
+    opacity: 0.75;
+    transform: scale(1);
+  }
+
+  78% {
+    opacity: 0.35;
+  }
+
+  84% {
+    opacity: 0;
+    transform: scale(1.03);
+  }
+}
+
 
 
 /* =========================
@@ -790,8 +882,31 @@
   }
 
   .hero-lightning {
-    height: 42%;
-  }
+  height: 38%;
+  opacity: 0.75;
+}
+}
+
+
+
+.hero-icon-electrical {
+  top: 18.5%;
+  left: 67.5%;
+}
+
+.hero-icon-plumbing {
+  top: 38%;
+  left: 67.5%;
+}
+
+.hero-icon-breaker {
+  top: 57.5%;
+  left: 67.5%;
+}
+
+.hero-icon-core {
+  top: 77%;
+  left: 67.5%;
 }
 
 

@@ -21,6 +21,7 @@
   border-radius: 999px;
 
   text-decoration: none;
+  white-space: nowrap;
 
   box-shadow:
     0 10px 30px rgba(15, 23, 42, 0.18),
@@ -33,13 +34,12 @@
   transform: translateY(20px) scale(0.96);
 
   transition:
-    opacity 0.4s ease,
-    visibility 0.4s ease,
-    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.3s ease,
-    background 0.3s ease;
+    background-color 0.3s ease;
 }
-
 
 /* =========================================
    VISIBLE STATE
@@ -53,19 +53,17 @@
   transform: translateY(0) scale(1);
 }
 
-
 /* =========================================
    SMALL LABEL
 ========================================= */
 
 .floating-work-label {
+  color: #f87171;
+
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 1.4px;
-
-  color: #a855f7;
 }
-
 
 /* =========================================
    MAIN TEXT
@@ -77,7 +75,6 @@
   white-space: nowrap;
 }
 
-
 /* =========================================
    ARROW
 ========================================= */
@@ -85,6 +82,7 @@
 .floating-work-arrow {
   width: 30px;
   height: 30px;
+  flex-shrink: 0;
 
   display: flex;
   align-items: center;
@@ -94,113 +92,96 @@
   color: #111827;
 
   border-radius: 50%;
-
   font-size: 11px;
 
   transition:
     transform 0.3s ease,
-    background 0.3s ease,
+    background-color 0.3s ease,
     color 0.3s ease;
 }
 
-
 /* =========================================
-   HOVER
+   HOVER EFFECT
 ========================================= */
 
 @media (hover: hover) and (pointer: fine) {
-
-  .floating-work-button:hover {
+  .floating-work-button-visible:hover {
     background: #1f2937;
-
-    transform: translateY(-4px) scale(1.01);
+    transform: translateY(-4px);
 
     box-shadow:
       0 16px 35px rgba(15, 23, 42, 0.22),
       0 6px 14px rgba(15, 23, 42, 0.1);
   }
 
-
-  .floating-work-button:hover .floating-work-arrow {
+  .floating-work-button-visible:hover .floating-work-arrow {
     transform: translateX(4px);
-    background: #a855f7;
+    background: var(--primary);
     color: #ffffff;
   }
 }
-
 
 /* =========================================
    ACTIVE / PRESS EFFECT
 ========================================= */
 
-.floating-work-button:active {
+.floating-work-button-visible:active {
   transform: translateY(-1px) scale(0.97);
 }
-
 
 /* =========================================
    KEYBOARD ACCESSIBILITY
 ========================================= */
 
 .floating-work-button:focus-visible {
-  outline: 3px solid rgba(168, 85, 247, 0.35);
+  outline: 3px solid #f87171;
   outline-offset: 4px;
 }
 
-
 /* =========================================
-   MOBILE
+   TABLET
 ========================================= */
 
 @media (max-width: 768px) {
-
   .floating-work-button {
     right: 16px;
     bottom: 20px;
 
     gap: 8px;
-
     padding: 10px 12px 10px 14px;
   }
-
 
   .floating-work-label {
     display: none;
   }
 
-
   .floating-work-text {
     font-size: 12px;
   }
 
-
   .floating-work-arrow {
     width: 28px;
     height: 28px;
-
     font-size: 10px;
   }
 }
-
 
 /* =========================================
    SMALL MOBILE
 ========================================= */
 
 @media (max-width: 480px) {
-
   .floating-work-button {
     right: 14px;
     bottom: 16px;
 
+    gap: 7px;
     padding: 9px 10px 9px 13px;
   }
-
 
   .floating-work-text {
     font-size: 11px;
   }
-
 
   .floating-work-arrow {
     width: 26px;
@@ -208,23 +189,26 @@
   }
 }
 
-
 /* =========================================
    REDUCED MOTION
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
-
-  .floating-work-button {
-    transition: none;
-    transform: none;
-  }
-
-  .floating-work-button-visible {
-    transform: none;
-  }
-
+  .floating-work-button,
   .floating-work-arrow {
     transition: none;
+  }
+
+  .floating-work-button {
+    transform: none;
+  }
+
+  .floating-work-button-visible:hover,
+  .floating-work-button-visible:active {
+    transform: none;
+  }
+
+  .floating-work-button-visible:hover .floating-work-arrow {
+    transform: none;
   }
 }

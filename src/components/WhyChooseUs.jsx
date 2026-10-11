@@ -56,7 +56,7 @@ function WhyChooseUs() {
               key={reason.title}
               delay={index * 100}
             >
-              <div className="why-card">
+              <div className={`why-card why-card-${index}`}>
 
                 <div className="why-icon">
                   {reason.icon}

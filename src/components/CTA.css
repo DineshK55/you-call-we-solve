@@ -1,9 +1,12 @@
+/* =========================
+   CTA SECTION
+========================= */
+
 .cta {
   position: relative;
+  isolation: isolate;
   overflow: hidden;
-
   padding: 75px 24px;
-
   background: var(--dark);
 }
 
@@ -11,42 +14,31 @@
    BACKGROUND GLOW
 ========================= */
 
-.cta::before {
+.cta::before,
+.cta::after {
   content: "";
-
   position: absolute;
-  width: 420px;
-  height: 420px;
-
-  top: -220px;
-  right: -120px;
-
+  z-index: -1;
   border-radius: 50%;
+  pointer-events: none;
+}
 
-  background: rgba(15, 118, 110, 0.16);
-
-  filter: blur(10px);
-
-  animation: ctaGlow 6s ease-in-out infinite alternate;
+.cta::before {
+  width: 380px;
+  height: 380px;
+  top: -220px;
+  right: -100px;
+  background: rgba(220, 38, 38, 0.14);
+  filter: blur(45px);
 }
 
 .cta::after {
-  content: "";
-
-  position: absolute;
-  width: 260px;
-  height: 260px;
-
-  bottom: -180px;
-  left: 10%;
-
-  border-radius: 50%;
-
-  background: rgba(245, 158, 11, 0.08);
-
-  filter: blur(10px);
-
-  animation: ctaGlow 7s ease-in-out infinite alternate-reverse;
+  width: 280px;
+  height: 280px;
+  bottom: -190px;
+  left: 8%;
+  background: rgba(37, 99, 235, 0.12);
+  filter: blur(45px);
 }
 
 /* =========================
@@ -54,16 +46,13 @@
 ========================= */
 
 .cta-container {
-  position: relative;
-  z-index: 1;
-
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   gap: 40px;
 }
 
@@ -73,39 +62,34 @@
 
 .cta-content {
   max-width: 650px;
-
-  opacity: 0;
-
-  animation: ctaContentReveal 0.7s ease forwards;
 }
 
 .cta-content p {
   display: inline-block;
-
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 
   color: var(--accent);
-
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
-
-  letter-spacing: 1.5px;
+  letter-spacing: 1.6px;
 }
 
 .cta-content h2 {
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 
   color: var(--white);
-
-  font-size: 40px;
+  font-size: clamp(30px, 3.2vw, 40px);
   line-height: 1.2;
+  font-weight: 700;
 }
 
 .cta-content span {
-  color: #cbd5e1;
+  display: block;
+  max-width: 620px;
 
+  color: #cbd5e1;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
 /* =========================
@@ -115,14 +99,10 @@
 .cta-actions {
   display: flex;
   align-items: center;
-
-  gap: 12px;
-
+  justify-content: flex-end;
   flex-shrink: 0;
-
-  opacity: 0;
-
-  animation: ctaActionsReveal 0.7s ease 0.15s forwards;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 /* =========================
@@ -134,22 +114,24 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
 
-  gap: 9px;
-
-  min-width: 125px;
-
-  padding: 12px 20px;
-
-  border-radius: 7px;
+  min-height: 46px;
+  padding: 13px 20px;
+  border: 1px solid transparent;
+  border-radius: 8px;
 
   font-size: 14px;
   font-weight: 600;
+  line-height: 1.3;
+  text-decoration: none;
+  white-space: nowrap;
 
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
-    background 0.25s ease;
+    background-color 0.25s ease,
+    border-color 0.25s ease;
 }
 
 /* =========================
@@ -159,21 +141,18 @@
 .cta-primary-btn {
   background: var(--primary);
   color: var(--white);
+  box-shadow: 0 5px 14px rgba(220, 38, 38, 0.18);
 }
 
 .cta-primary-btn svg {
-  font-size: 12px;
-
+  font-size: 13px;
   transition: transform 0.25s ease;
 }
 
 .cta-primary-btn:hover {
   background: var(--primary-dark);
-
   transform: translateY(-3px);
-
-  box-shadow:
-    0 8px 20px rgba(15, 118, 110, 0.3);
+  box-shadow: 0 9px 22px rgba(220, 38, 38, 0.25);
 }
 
 .cta-primary-btn:hover svg {
@@ -191,74 +170,52 @@
 
 .cta-whatsapp-btn svg {
   color: #16a34a;
-
-  font-size: 17px;
-
+  font-size: 18px;
+  flex-shrink: 0;
   transition: transform 0.25s ease;
 }
 
 .cta-whatsapp-btn:hover {
   background: #f1f5f9;
-
   transform: translateY(-3px);
-
-  box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 9px 22px rgba(0, 0, 0, 0.18);
 }
 
 .cta-whatsapp-btn:hover svg {
-  transform: scale(1.12);
+  transform: scale(1.1);
 }
 
 /* =========================
-   ANIMATIONS
+   KEYBOARD ACCESSIBILITY
 ========================= */
 
-@keyframes ctaContentReveal {
-  from {
-    opacity: 0;
-    transform: translateX(-25px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes ctaActionsReveal {
-  from {
-    opacity: 0;
-    transform: translateX(25px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes ctaGlow {
-  from {
-    transform: translate(0, 0) scale(1);
-  }
-
-  to {
-    transform: translate(-25px, 20px) scale(1.12);
-  }
+.cta-primary-btn:focus-visible,
+.cta-whatsapp-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
 }
 
 /* =========================
    TABLET
 ========================= */
 
-@media (max-width: 850px) {
+@media (max-width: 950px) {
+  .cta {
+    padding: 65px 24px;
+  }
+
   .cta-container {
     flex-direction: column;
-
     align-items: flex-start;
-
     gap: 28px;
+  }
+
+  .cta-content {
+    max-width: 720px;
+  }
+
+  .cta-actions {
+    justify-content: flex-start;
   }
 }
 
@@ -268,65 +225,74 @@
 
 @media (max-width: 600px) {
   .cta {
-    padding: 65px 18px;
+    padding: 52px 18px;
   }
 
   .cta-container {
-    gap: 28px;
+    gap: 24px;
+  }
+
+  .cta-content p {
+    margin-bottom: 10px;
+    font-size: 12px;
   }
 
   .cta-content h2 {
-    font-size: 32px;
+    margin-bottom: 12px;
+    font-size: 30px;
+    line-height: 1.25;
   }
 
   .cta-content span {
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 1.75;
   }
 
   .cta-actions {
     width: 100%;
-
-    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .cta-primary-btn,
   .cta-whatsapp-btn {
-    flex: 1;
-
+    width: 100%;
     min-width: 0;
-
-    padding: 12px 14px;
+    min-height: 48px;
+    padding: 13px 16px;
   }
 }
 
 /* =========================
-   ACCESSIBILITY
+   SMALL MOBILE
 ========================= */
 
-.cta-primary-btn:focus-visible,
-.cta-whatsapp-btn:focus-visible {
-  outline: 2px solid var(--accent);
+@media (max-width: 360px) {
+  .cta {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
 
-  outline-offset: 3px;
+  .cta-content h2 {
+    font-size: 27px;
+  }
 }
 
+/* =========================
+   REDUCED MOTION
+========================= */
+
 @media (prefers-reduced-motion: reduce) {
-  .cta::before,
-  .cta::after,
-  .cta-content,
-  .cta-actions {
-    animation: none;
-  }
-
-  .cta-content,
-  .cta-actions {
-    opacity: 1;
-  }
-
   .cta-primary-btn,
   .cta-whatsapp-btn,
   .cta-primary-btn svg,
   .cta-whatsapp-btn svg {
     transition: none;
+  }
+
+  .cta-primary-btn:hover,
+  .cta-whatsapp-btn:hover {
+    transform: none;
   }
 }

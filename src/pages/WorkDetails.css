@@ -2,11 +2,13 @@
    WORK DETAILS PAGE
 ========================================================= */
 
+
 .work-details {
-  padding: 70px 24px 90px;
+  padding: 32px 24px 48px;
   background: var(--light);
   min-height: 100vh;
 }
+
 
 .work-details-container {
   max-width: 1180px;
@@ -18,27 +20,52 @@
    BACK BUTTON
 ========================================================= */
 
+
 .work-details-back {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 9px;
+  min-height: 42px;
+  padding: 10px 15px;
+  margin-bottom: 24px;
 
-  margin-bottom: 38px;
+  color: var(--dark);
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
 
-  color: var(--primary);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
-
   text-decoration: none;
 
-  transition:
-    color 0.25s ease,
-    transform 0.25s ease;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  transition: background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.work-details-back svg {
+  color: var(--primary);
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .work-details-back:hover {
-  color: var(--primary-dark);
-  transform: translateX(-4px);
+  color: var(--white);
+  background: var(--primary);
+  border-color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.work-details-back:hover svg {
+  color: var(--white);
+  transform: translateX(-3px);
+}
+
+.work-details-back:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
 }
 
 
@@ -46,11 +73,11 @@
    MAIN LAYOUT
 ========================================================= */
 
+
 .work-details-layout {
   display: grid;
   grid-template-columns: 360px minmax(0, 1fr);
-  gap: 52px;
-
+  gap: 32px;
   align-items: start;
 }
 
@@ -1226,18 +1253,18 @@
 
 @media (max-width: 760px) {
   .work-details {
-    padding: 55px 18px 70px;
+    padding: 24px 18px 36px;
   }
 
   .work-details-back {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 
   /* MAIN LAYOUT → ONE COLUMN */
 
   .work-details-layout {
     grid-template-columns: 1fr;
-    gap: 38px;
+    gap: 26px;
   }
 
   .work-details-info {
@@ -1295,7 +1322,7 @@
   /* DESCRIPTION */
 
   .work-description-section {
-    margin-top: 40px;
+    margin-top: 26px;
     padding: 22px;
   }
 
@@ -1354,7 +1381,7 @@
 
 @media (max-width: 480px) {
   .work-details {
-    padding: 45px 14px 60px;
+    padding: 20px 14px 30px;
   }
 
   .work-details-info h1 {

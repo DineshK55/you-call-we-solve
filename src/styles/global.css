@@ -6,11 +6,17 @@
      BRAND COLORS
   ========================= */
 
-  --primary: #0f766e;
-  --primary-dark: #115e59;
+  --primary: #dc2626;
+  --primary-dark: #b91c1c;
 
-  --accent: #f59e0b;
-  --accent-dark: #d97706;
+  --secondary: #16a34a;
+  --secondary-dark: #15803d;
+
+  --accent: #ef3340;
+  --accent-dark: #dc2626;
+
+  --service-blue: #2563eb;
+  --service-blue-dark: #1d4ed8;
 
   /* =========================
      TEXT COLORS
@@ -26,12 +32,15 @@
 
   --light: #f8fafc;
   --white: #ffffff;
+  --dark-bg: #07111f;
+  --dark-surface: #0b1626;
 
   /* =========================
      BORDER
   ========================= */
 
   --border: #e2e8f0;
+  --border-dark: #263548;
 
   /* =========================
      LAYOUT
@@ -47,7 +56,6 @@
   --radius-md: 10px;
   --radius-lg: 14px;
 }
-
 
 /* =========================
    GLOBAL RESET
@@ -208,4 +216,10 @@ select:focus-visible {
 img {
   max-width: 100%;
   display: block;
+}
+
+
+.placeholder-page {
+  min-height: 100vh;
+  background: var(--white);
 }

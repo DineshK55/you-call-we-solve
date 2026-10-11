@@ -66,7 +66,7 @@ function Testimonials() {
 
           {testimonials.map((testimonial, index) => (
             <ScrollReveal
-              key={index}
+              key={`${testimonial.name}-${testimonial.service}`}
               delay={index * 120}
             >
               <div className="testimonial-card">
@@ -96,8 +96,8 @@ function Testimonials() {
                 {/* REVIEW */}
 
                 <p className="testimonial-review">
-                  "{testimonial.review}"
-                </p>
+  “{testimonial.review}”
+</p>
 
 
                 {/* CUSTOMER */}

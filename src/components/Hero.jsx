@@ -95,11 +95,11 @@ function Hero() {
           <h1>
             Electrical, Plumbing
             <br />
-            &amp; Machine Services
+            &amp; Machine Work
           </h1>
 
           <p className="hero-description">
-            Need reliable electrical, plumbing, breaker machine, or core
+            Need reliable electrical, plumbing, breaker machine and core
             cutting services? Contact us for professional and dependable
             service in Anthiyur and surrounding areas.
           </p>
@@ -128,14 +128,18 @@ function Hero() {
 
 
         {/* HERO IMAGE */}
-        <div className="hero-image">
+       <div className="hero-image">
+  <img
+    src="/images/hero-service.png"
+    alt="Professional electrical and plumbing service"
+  />
 
-          <img
-            src="/images/hero-service.png"
-            alt="Professional electrical and plumbing service"
-          />
-
-        </div>
+  {/* Professional Service Icon Highlights */}
+  <span className="hero-icon-highlight hero-highlight-electrical"></span>
+  <span className="hero-icon-highlight hero-highlight-plumbing"></span>
+  <span className="hero-icon-highlight hero-highlight-breaker"></span>
+  <span className="hero-icon-highlight hero-highlight-core"></span>
+</div>
 
       </div>
 

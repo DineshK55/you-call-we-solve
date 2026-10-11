@@ -1,20 +1,25 @@
+/* =================================
+   WORKS PAGE
+================================= */
+
 .works-page {
   padding: 70px 24px;
   background: var(--light);
 }
 
 .works-page-container {
+  width: 100%;
   max-width: 1100px;
   margin: 0 auto;
 }
 
-/* =========================
+/* =================================
    PAGE HEADING
-========================= */
+================================= */
 
 .works-page-heading {
   max-width: 650px;
-  margin-bottom: 38px;
+  margin-bottom: 30px;
 }
 
 .works-page-heading p {
@@ -35,32 +40,83 @@
 .works-page-heading span {
   color: var(--text);
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
-/* =========================
-   GRID
-========================= */
+/* =================================
+   BACK TO HOME NAVIGATION
+================================= */
+
+.works-page-navigation {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 28px;
+}
+
+.works-page-back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  min-height: 42px;
+  padding: 10px 16px;
+
+  background: var(--white);
+  color: var(--dark);
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.works-page-back-btn:hover {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.works-page-back-btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
+
+/* =================================
+   WORKS GRID
+================================= */
 
 .works-page-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
 }
 
-/* =========================
-   CARD
-========================= */
+/* =================================
+   WORK CARD
+================================= */
 
 .works-page-card {
+  min-width: 0;
   overflow: hidden;
 
   background: var(--white);
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 12px;
 
-  opacity: 0;
-  animation: workReveal 0.55s ease forwards;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.035);
+
+  animation: workReveal 0.5s ease both;
+  animation-delay: calc(var(--work-index, 0) * 70ms);
 
   transition:
     transform 0.25s ease,
@@ -68,127 +124,100 @@
     border-color 0.25s ease;
 }
 
-.works-page-card:nth-child(1) {
-  animation-delay: 0.05s;
+@media (hover: hover) and (pointer: fine) {
+  .works-page-card:hover {
+    transform: translateY(-5px);
+    border-color: #cbd5e1;
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.09);
+  }
 }
 
-.works-page-card:nth-child(2) {
-  animation-delay: 0.12s;
-}
-
-.works-page-card:nth-child(3) {
-  animation-delay: 0.19s;
-}
-
-.works-page-card:nth-child(4) {
-  animation-delay: 0.26s;
-}
-
-.works-page-card:nth-child(5) {
-  animation-delay: 0.33s;
-}
-
-.works-page-card:nth-child(6) {
-  animation-delay: 0.40s;
-}
-
-.works-page-card:hover {
-  transform: translateY(-5px);
-
-  border-color: #cbd5e1;
-
-  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.09);
-}
-
-/* =========================
-   IMAGE
-========================= */
+/* =================================
+   WORK IMAGE
+================================= */
 
 .works-page-image {
   width: 100%;
-  height: 165px;
-
+  height: 180px;
   overflow: hidden;
-
   background: #e5e7eb;
 }
 
 .works-page-image img {
+  display: block;
   width: 100%;
   height: 100%;
-
-  display: block;
-
   object-fit: cover;
 
   transition: transform 0.45s ease;
 }
 
-.works-page-card:hover .works-page-image img {
-  transform: scale(1.045);
+@media (hover: hover) and (pointer: fine) {
+  .works-page-card:hover .works-page-image img {
+    transform: scale(1.045);
+  }
 }
 
-/* =========================
-   CONTENT
-========================= */
+/* =================================
+   CARD CONTENT
+================================= */
 
 .works-page-content {
-  padding: 17px;
+  padding: 19px;
 }
 
 .works-page-content > p {
-  margin-bottom: 6px;
-
+  margin-bottom: 7px;
   color: var(--primary);
-
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.6px;
-
+  letter-spacing: 0.7px;
   text-transform: uppercase;
 }
 
 .works-page-content h2 {
-  margin-bottom: 8px;
-
+  margin-bottom: 10px;
   color: var(--dark);
-
   font-size: 18px;
-  line-height: 1.35;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
 }
 
-.works-page-content span {
-  display: block;
+.works-page-content > span {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
 
-  margin-bottom: 14px;
-
+  margin-bottom: 16px;
   color: var(--text);
-
   font-size: 13px;
+  line-height: 1.5;
 }
 
-/* =========================
-   BUTTON
-========================= */
+/* =================================
+   VIEW DETAILS BUTTON
+================================= */
 
 .works-page-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  padding: 8px 14px;
+  min-height: 38px;
+  padding: 9px 15px;
 
   border: 1px solid var(--primary);
-  border-radius: 5px;
+  border-radius: 6px;
 
   background: transparent;
   color: var(--primary);
 
   font-size: 12px;
   font-weight: 600;
+  text-decoration: none;
 
   transition:
-    background 0.2s ease,
+    background-color 0.2s ease,
     color 0.2s ease,
     transform 0.2s ease;
 }
@@ -199,9 +228,14 @@
   transform: translateY(-1px);
 }
 
-/* =========================
-   LOADING / EMPTY
-========================= */
+.works-page-btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+/* =================================
+   LOADING / EMPTY STATES
+================================= */
 
 .works-page-status {
   min-height: 180px;
@@ -211,13 +245,13 @@
   justify-content: center;
 
   color: var(--text);
-
   font-size: 15px;
+  text-align: center;
 }
 
-/* =========================
+/* =================================
    TABLET
-========================= */
+================================= */
 
 @media (max-width: 900px) {
   .works-page {
@@ -233,18 +267,18 @@
   }
 
   .works-page-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
   }
 
   .works-page-image {
-    height: 175px;
+    height: 185px;
   }
 }
 
-/* =========================
+/* =================================
    MOBILE
-========================= */
+================================= */
 
 @media (max-width: 600px) {
   .works-page {
@@ -252,7 +286,7 @@
   }
 
   .works-page-heading {
-    margin-bottom: 30px;
+    margin-bottom: 24px;
   }
 
   .works-page-heading h1 {
@@ -263,17 +297,26 @@
     font-size: 14px;
   }
 
+  .works-page-navigation {
+    margin-bottom: 24px;
+  }
+
+  .works-page-back-btn {
+    min-height: 44px;
+    padding: 10px 14px;
+  }
+
   .works-page-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
   }
 
   .works-page-image {
-    height: 190px;
+    height: 210px;
   }
 
   .works-page-content {
-    padding: 17px;
+    padding: 19px;
   }
 
   .works-page-content h2 {
@@ -281,13 +324,13 @@
   }
 }
 
-/* =========================
+/* =================================
    SMALL MOBILE
-========================= */
+================================= */
 
 @media (max-width: 400px) {
   .works-page {
-    padding: 45px 14px;
+    padding: 44px 14px;
   }
 
   .works-page-heading h1 {
@@ -295,7 +338,7 @@
   }
 
   .works-page-image {
-    height: 180px;
+    height: 185px;
   }
 
   .works-page-content {
@@ -303,14 +346,14 @@
   }
 }
 
-/* =========================
-   ANIMATION
-========================= */
+/* =================================
+   CARD ANIMATION
+================================= */
 
 @keyframes workReveal {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(16px);
   }
 
   to {
@@ -319,14 +362,9 @@
   }
 }
 
-/* =========================
-   ACCESSIBILITY
-========================= */
-
-.works-page-btn:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-}
+/* =================================
+   REDUCED MOTION
+================================= */
 
 @media (prefers-reduced-motion: reduce) {
   .works-page-card {
@@ -336,7 +374,18 @@
 
   .works-page-card,
   .works-page-image img,
-  .works-page-btn {
+  .works-page-btn,
+  .works-page-back-btn {
     transition: none;
+  }
+
+  .works-page-card:hover,
+  .works-page-btn:hover,
+  .works-page-back-btn:hover {
+    transform: none;
+  }
+
+  .works-page-card:hover .works-page-image img {
+    transform: none;
   }
 }

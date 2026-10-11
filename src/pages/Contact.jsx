@@ -8,7 +8,7 @@ import {
 import SEO from "../components/SEO/SEO";
 import "./Contact.css";
 
-const WHATSAPP_NUMBER = "916379923436";
+const WHATSAPP_NUMBER = "917904180076";
 
 const CLIENT_PHONE_1 = "917904180076";
 const CLIENT_PHONE_2 = "916379923436";
@@ -16,35 +16,42 @@ const CLIENT_PHONE_2 = "916379923436";
 const CLIENT_EMAIL = "youcallwesove@gmail.com";
 
 function Contact() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  
+const handleSubmit = (event) => {
+  event.preventDefault();
 
-    const formData = new FormData(event.target);
+  const form = event.currentTarget;
 
-    const name = formData.get("name");
-    const phone = formData.get("phone");
-    const service = formData.get("service");
-    const message = formData.get("message");
+  if (!form.reportValidity()) {
+    return;
+  }
 
-    const whatsappMessage = `
-Hello, You Call We Solve.
+  const formData = new FormData(form);
 
-Name: ${name}
-Phone: ${phone}
-Service Required: ${service}
-Work Details: ${message}
+  const name = formData.get("name");
+  const phone = formData.get("phone");
+  const service = formData.get("service");
+  const message = formData.get("message");
 
-Please contact me regarding this work requirement.
-    `.trim();
+  const whatsappMessage = [
+    "Hello, You Call We Solve.",
+    "",
+    `Name: ${name}`,
+    `Phone: ${phone}`,
+    `Service Required: ${service}`,
+    `Work Details: ${message}`,
+    "",
+    "Please contact me regarding this work requirement.",
+  ].join("\n");
 
-    const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  const whatsappURL =
+    `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
       whatsappMessage
     )}`;
 
-    window.open(whatsappURL, "_blank");
+  window.location.assign(whatsappURL);
+};
 
-    event.target.reset();
-  };
 
   return (
     <>
@@ -70,7 +77,7 @@ Please contact me regarding this work requirement.
 </h1>
 
           <span>
-  Need electrical, plumbing, breaker machine, or core cutting services?
+  Need electrical, plumbing, breaker machine and core cutting services?
   Share your requirements with us. We are ready to provide reliable
   and professional service.
 </span>
@@ -260,13 +267,17 @@ Please contact me regarding this work requirement.
                   </label>
 
                   <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    placeholder="Enter your phone number"
-                    autoComplete="tel"
-                    required
-                  />
+  type="tel"
+  id="phone"
+  name="phone"
+  placeholder="Enter your 10-digit mobile number"
+  autoComplete="tel"
+  inputMode="numeric"
+  pattern="[6-9][0-9]{9}"
+  maxLength={10}
+  title="Enter a valid 10-digit Indian mobile number"
+  required
+/>
 
                 </div>
 

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { NavLink, Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 import "./Navbar.css";
 
 function Navbar() {
@@ -16,12 +17,16 @@ function Navbar() {
 
         {/* LOGO */}
         <Link
-          to="/"
-          className="navbar-logo"
-          onClick={closeMenu}
-        >
-          You Call We Solve
-        </Link>
+  to="/"
+  className="navbar-logo"
+  onClick={closeMenu}
+  aria-label="You Call We Solve - Home"
+>
+  <img
+    src={logo}
+    alt="You Call We Solve"
+  />
+</Link>
 
 
         {/* NAVIGATION */}
@@ -87,7 +92,7 @@ function Navbar() {
         <div className="navbar-actions">
 
           <a
-            href="https://wa.me/916379923436"
+            href="https://wa.me/917904180076"
             className="navbar-whatsapp"
             target="_blank"
             rel="noopener noreferrer"

@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { collection, getDocs, query, where } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
+import { FaArrowLeft, FaHome } from "react-icons/fa";
 import { db } from "../firebase";
 import SEO from "../components/SEO/SEO";
 import "./Works.css";
-
 
 function Works() {
   const [works, setWorks] = useState([]);
@@ -37,69 +42,93 @@ function Works() {
   }, []);
 
   return (
-  <>
-    <SEO
-      title="Our Works | You Call We Solve"
-      description="View completed electrical, plumbing, breaker machine and core cutting work by You Call We Solve in Anthiyur and surrounding areas."
-    />
+    <>
+      <SEO
+        title="Our Works | You Call We Solve"
+        description="View completed electrical, plumbing, breaker machine and core cutting work by You Call We Solve in Anthiyur and surrounding areas."
+      />
 
-    <section className="works-page">
-      <div className="works-page-container">
+      <section className="works-page">
+        <div className="works-page-container">
 
-        <div className="works-page-heading">
-          <p>OUR WORK</p>
+          {/* PAGE HEADING */}
 
-          <h1>Completed Works</h1>
+          <div className="works-page-heading">
+            <p>OUR WORK</p>
 
-          <span>
-            Explore some of the projects we have completed for our clients.
-          </span>
+            <h1>Completed Works</h1>
+
+            <span>
+              Explore some of the projects we have completed
+              for our clients.
+            </span>
+          </div>
+
+          {/* BACK TO HOME */}
+
+          <div className="works-page-navigation">
+            <Link to="/" className="works-page-back-btn">
+              <FaArrowLeft aria-hidden="true" />
+              <FaHome aria-hidden="true" />
+              Back to Home
+            </Link>
+          </div>
+
+          {/* LOADING STATE */}
+
+          {loading ? (
+            <div className="works-page-status">
+              <p>Loading works...</p>
+            </div>
+          ) : works.length === 0 ? (
+            <div className="works-page-status">
+              <p>No completed works available.</p>
+            </div>
+          ) : (
+            /* WORKS GRID */
+
+            <div className="works-page-grid">
+              {works.map((work) => (
+                <article
+                  className="works-page-card"
+                  key={work.id}
+                >
+                  <div className="works-page-image">
+                    <img
+                      src={work.thumbnailUrl}
+                      alt={work.title || "Completed project"}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+
+                  <div className="works-page-content">
+                    <p>{work.service}</p>
+
+                    <h2>{work.title}</h2>
+
+                    <span>
+                      <span aria-hidden="true">📍</span>{" "}
+                      {work.location}
+                    </span>
+
+                    <Link
+                      to={`/works/${work.id}`}
+                      className="works-page-btn"
+                      aria-label={`View details for ${work.title}`}
+                    >
+                      View Details
+                    </Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
+
         </div>
-
-        {loading ? (
-          <div className="works-page-status">
-            <p>Loading works...</p>
-          </div>
-        ) : works.length === 0 ? (
-          <div className="works-page-status">
-            <p>No completed works available.</p>
-          </div>
-        ) : (
-          <div className="works-page-grid">
-            {works.map((work) => (
-              <div className="works-page-card" key={work.id}>
-
-                <div className="works-page-image">
-                  <img
-                    src={work.thumbnailUrl}
-                    alt={work.title}
-                  />
-                </div>
-
-                <div className="works-page-content">
-
-                  <p>{work.service}</p>
-
-                  <h2>{work.title}</h2>
-
-                  <span>📍 {work.location}</span>
-
-                  <Link
-                    to={`/works/${work.id}`}
-                    className="works-page-btn"
-                  >
-                    View Details
-                  </Link>
-
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-
-      </div>
-       </section>
-  </>
+      </section>
+    </>
   );
 }
+
 export default Works;

@@ -12,31 +12,31 @@ import "./Services.css";
 const services = [
   {
     image: "/images/electrical-work.png",
-    icon: <FaBolt />,
+    icon: <FaBolt aria-hidden="true" />,
     title: "Electrical Work",
     description:
-  "Electrical installation, wiring, repair and maintenance services for homes, shops and offices.",
+      "Electrical installation, wiring, repair and maintenance services for homes, shops and offices.",
   },
   {
     image: "/images/plumbing-work.png",
-    icon: <FaWrench />,
+    icon: <FaWrench aria-hidden="true" />,
     title: "Plumbing Work",
     description:
-  "Water pipe installation, leakage repair, bathroom plumbing and other plumbing services.",
+      "Water pipe installation, leakage repair, bathroom plumbing and other plumbing services.",
   },
   {
     image: "/images/breaker-machine-work.png",
-    icon: <FaTools />,
+    icon: <FaTools aria-hidden="true" />,
     title: "Breaker Machine Work",
     description:
-  "Breaker machine services for concrete breaking, wall breaking and demolition-related work.",
+      "Breaker machine services for concrete breaking, wall breaking and demolition-related work.",
   },
   {
     image: "/images/core-cutting-work.png",
-    icon: <FaCircleNotch />,
+    icon: <FaCircleNotch aria-hidden="true" />,
     title: "Core Cutting Work",
     description:
-  "Accurate core cutting services for concrete walls, slabs and other construction requirements.",
+      "Accurate core cutting services for concrete walls, slabs and other construction requirements.",
   },
 ];
 
@@ -49,96 +49,92 @@ function Services() {
       />
 
       <section className="services-page">
-      <div className="services-page-container">
-        
+        <div className="services-page-container">
+          {/* PAGE HEADING */}
 
-        
+          <div className="services-page-heading">
+            <p className="services-page-label">WHAT WE DO</p>
 
-        {/* =========================
-            PAGE HEADING
-        ========================= */}
+            <h1>Our Services</h1>
 
-        <div className="services-page-heading">
-          <p className="services-page-label">WHAT WE DO</p>
-
-          <h1>Our Services</h1>
-
-          <p className="services-page-description">
-  Need electrical, plumbing, breaker machine, or core cutting services?
-  Contact us to discuss your requirements.
-</p>
-        </div>
-
-        {/* =========================
-            SERVICES
-        ========================= */}
-
-        <div className="services-page-grid">
-          {services.map((service, index) => (
-            <article
-              className="services-page-card"
-              key={service.title}
-              style={{ "--service-index": index }}
-            >
-              {/* IMAGE */}
-
-              <div className="services-page-image">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                />
-
-                <div className="services-page-icon">
-                  {service.icon}
-                </div>
-              </div>
-
-              {/* CONTENT */}
-
-              <div className="services-page-content">
-                <h2>{service.title}</h2>
-
-                <p>{service.description}</p>
-
-                <Link
-                  to="/contact"
-                  className="services-page-card-link"
-                >
-                  Get in Touch
-                  <FaArrowRight />
-                </Link>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        {/* =========================
-            CTA
-        ========================= */}
-
-        <div className="services-page-cta">
-          <div className="services-page-cta-content">
-            <p>NEED SERVICE?</p>
-
-            <h2>Need Service? Contact Us Today.</h2>
-
-            <span>
-  Share your requirements with us. We are ready to provide
-  reliable and professional service.
-</span>
+            <p className="services-page-description">
+              Need electrical, plumbing, breaker machine and core
+              cutting services? Contact us to discuss your
+              requirements.
+            </p>
           </div>
 
-          <Link
-            to="/contact"
-            className="services-page-cta-btn"
-          >
-            Contact Us
-            <FaArrowRight />
-          </Link>
-        </div>
+          {/* SERVICES GRID */}
 
-      </div>
-          </section>
+          <div className="services-page-grid">
+            {services.map((service, index) => (
+              <article
+                className="services-page-card"
+                key={service.title}
+                style={{ "--service-index": index }}
+              >
+                {/* SERVICE IMAGE */}
+
+                <div className="services-page-image">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    loading="lazy"
+                    decoding="async"
+                  />
+
+                  <div
+                    className="services-page-icon"
+                    aria-hidden="true"
+                  >
+                    {service.icon}
+                  </div>
+                </div>
+
+                {/* SERVICE CONTENT */}
+
+                <div className="services-page-content">
+                  <h2>{service.title}</h2>
+
+                  <p>{service.description}</p>
+
+                  <Link
+                    to="/contact"
+                    className="services-page-card-link"
+                    aria-label={`Contact us about ${service.title}`}
+                  >
+                    Get in Touch
+                    <FaArrowRight aria-hidden="true" />
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          {/* CONTACT CTA */}
+
+          <div className="services-page-cta">
+            <div className="services-page-cta-content">
+              <p>NEED SERVICE?</p>
+
+              <h2>Need Service? Contact Us Today.</h2>
+
+              <span>
+                Share your requirements with us. We are ready to
+                provide reliable and professional service.
+              </span>
+            </div>
+
+            <Link
+              to="/contact"
+              className="services-page-cta-btn"
+            >
+              Contact Us
+              <FaArrowRight aria-hidden="true" />
+            </Link>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

@@ -1,42 +1,170 @@
 import { Link } from "react-router-dom";
+import { FaWhatsapp, FaInstagram, FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaBolt,
+  FaDroplet,
+  FaScrewdriverWrench,
+  FaCircleDot,
+} from "react-icons/fa6";
+import logo from "../assets/logo.png";
 import "./Footer.css";
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
+
+        {/* =========================
+            BRAND
+        ========================= */}
         <div className="footer-brand">
           <Link to="/" className="footer-logo">
-            You Call We Solve
-          </Link>
+  <img src={logo} alt="You Call We Solve" />
+</Link>
 
-          <p>
+          <p className="footer-description">
             Professional electrical, plumbing, breaker machine and core
-            cutting services.
+            cutting services. Reliable service for your home and business.
           </p>
+
+          {/* SOCIAL MEDIA */}
+          <div className="footer-social">
+            <a
+  href="https://wa.me/917904180076"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              className="social-icon whatsapp"
+            >
+              <FaWhatsapp />
+            </a>
+
+            <a
+              href="https://www.instagram.com/murugan_electrican/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="social-icon instagram"
+            >
+              <FaInstagram />
+            </a>
+          </div>
         </div>
 
-        <div className="footer-links">
+        {/* =========================
+            QUICK LINKS
+        ========================= */}
+        <div className="footer-column">
           <h3>Quick Links</h3>
 
-          <Link to="/">Home</Link>
-          <Link to="/services">Services</Link>
-          <Link to="/works">Our Works</Link>
-          <Link to="/about">About</Link>
-          <Link to="/contact">Contact</Link>
+          <Link to="/">Home <span>›</span></Link>
+          <Link to="/services">Services <span>›</span></Link>
+          <Link to="/works">Our Works <span>›</span></Link>
+          <Link to="/about">About <span>›</span></Link>
+          <Link to="/contact">Contact <span>›</span></Link>
         </div>
 
-        <div className="footer-contact">
-          <h3>Contact</h3>
+        {/* =========================
+            CONTACT
+        ========================= */}
+        <div className="footer-column footer-contact">
+          <h3>Contact Us</h3>
 
-          <p>Phone: +91 XXXXX XXXXX</p>
-          <p>Email: example@email.com</p>
-          <p>Gobichettipalayam, Tamil Nadu</p>
+          <div className="contact-item">
+            <div className="contact-icon phone">
+              <FaPhone />
+            </div>
+
+            <div>
+  <span>Phone</span>
+  <a href="tel:+917904180076">+91 79041 80076</a>
+</div>
+          </div>
+
+          <div className="contact-item">
+            <div className="contact-icon email">
+              <FaEnvelope />
+            </div>
+
+            <div>
+              <span>Email</span>
+              <p>Youcallwesolve@gmail.com</p>
+            </div>
+          </div>
+
+          <div className="contact-item">
+            <div className="contact-icon location">
+              <FaMapMarkerAlt />
+            </div>
+
+            <div>
+              <span>Location</span>
+              <p>Anthiyur, Tamil Nadu</p>
+            </div>
+          </div>
         </div>
+
+        {/* =========================
+            SERVICES
+        ========================= */}
+        <div className="footer-column footer-services">
+          <h3>Our Services</h3>
+
+          <div className="service-item">
+            <FaBolt />
+            <span>Electrical Work</span>
+          </div>
+
+          <div className="service-item">
+            <FaDroplet />
+            <span>Plumbing Work</span>
+          </div>
+
+          <div className="service-item">
+            <FaScrewdriverWrench />
+            <span>Breaker Machine Work</span>
+          </div>
+
+          <div className="service-item">
+  <FaCircleDot />
+  <span>Core Cutting Work</span>
+</div>
+        </div>
+
       </div>
 
+      {/* =========================
+          FOOTER BOTTOM
+      ========================= */}
       <div className="footer-bottom">
-        <p>© 2026 You Call We Solve. All rights reserved.</p>
+        <div className="footer-bottom-container">
+
+          <p>
+            © 2026 You Call We Solve. All rights reserved.
+          </p>
+
+          <div className="footer-bottom-links">
+            <Link to="/privacy-policy">Privacy Policy</Link>
+            <span>|</span>
+            <Link to="/terms">Terms & Conditions</Link>
+            <span>|</span>
+            <Link to="/sitemap">Sitemap</Link>
+          </div>
+
+          <button
+            className="back-to-top"
+            onClick={() =>
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              })
+            }
+            aria-label="Back to top"
+          >
+            ↑
+          </button>
+
+        </div>
       </div>
     </footer>
   );
