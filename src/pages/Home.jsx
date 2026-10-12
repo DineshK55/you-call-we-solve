@@ -13,7 +13,7 @@ function Home() {
     <>
       <SEO
         title="Electrical, Plumbing & Machine Work | You Call We Solve"
-        description="You Call We Solve provides reliable electrical, plumbing, breaker machine and core cutting services in Anthiyur and surrounding areas."
+        description="You Call We Solve provides reliable electrical, plumbing, breaker machine and core cutting works in Anthiyur and surrounding areas."
       />
 
       <Hero />

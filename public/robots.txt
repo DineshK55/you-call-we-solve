@@ -1,5 +1,4 @@
-
 User-agent: *
 Allow: /
 
-Sitemap: https://youcallwesolve.com/sitemap.xml
+Sitemap: https://www.youcallwesolve.com/sitemap.xml

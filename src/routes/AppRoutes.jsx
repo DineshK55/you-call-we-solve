@@ -21,37 +21,39 @@ import ManageWorks from "../pages/Admin/ManageWorks";
 import EditWork from "../pages/Admin/EditWork";
 
 import ScrollToTop from "../components/ScrollToTop";
+import AdminSEOLayout from "../components/SEO/AdminSEOLayout";
 
 function AppRoutes() {
   return (
-     <>
+    <>
       <ScrollToTop />
-    <Routes>
-      {/* Public Website */}
-      <Route element={<MainLayout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/works" element={<Works />} />
-        <Route path="/works/:id" element={<WorkDetails />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms" element={<Terms />} />
-        <Route path="/sitemap" element={<Sitemap />} />
-      </Route>
 
-      {/* Admin Website */}
-      <Route element={<AdminLayout />}>
-        <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/admin/dashboard" element={<AdminDashboard />} />
-        <Route path="/admin/manage-works" element={<ManageWorks />} />
-        <Route path="/admin/add-work" element={<AddWork />} />
-        <Route path="/admin/edit-work/:id"element={<EditWork />}/>
-      </Route>
-    </Routes>
+      <Routes>
+        {/* Public Website */}
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/works" element={<Works />} />
+          <Route path="/works/:id" element={<WorkDetails />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/sitemap" element={<Sitemap />} />
+        </Route>
+
+        {/* Admin Website */}
+        <Route element={<AdminSEOLayout />}>
+          <Route element={<AdminLayout />}>
+            <Route path="/admin/login" element={<AdminLogin />} />
+            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route path="/admin/manage-works" element={<ManageWorks />} />
+            <Route path="/admin/add-work" element={<AddWork />} />
+            <Route path="/admin/edit-work/:id" element={<EditWork />} />
+          </Route>
+        </Route>
+      </Routes>
     </>
-
-    
   );
 }
 
