@@ -26,7 +26,7 @@ function About() {
 
           <span>
             Murugan Electricals provides electrical, plumbing, breaker machine
-            and core cutting services for residential, commercial and
+            and core cutting works for residential, commercial and
             construction-related requirements.
           </span>
         </div>
@@ -44,7 +44,7 @@ function About() {
 
             <p>
               Murugan Electricals provides dependable electrical, plumbing,
-              breaker machine and core cutting services with a focus on
+              breaker machine and core cutting works with a focus on
               quality workmanship and proper attention to every requirement.
             </p>
 
@@ -192,7 +192,7 @@ function About() {
 
             <p>
               Murugan Electricals provides electrical, plumbing, breaker
-              machine and core cutting services in Anthiyur and surrounding
+              machine and core cutting works in Anthiyur and surrounding
               areas.
             </p>
           </div>
