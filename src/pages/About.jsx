@@ -63,7 +63,7 @@ function About() {
 
             <p>
               Experience across electrical, plumbing, breaker machine and
-              core cutting services.
+              core cutting Works.
             </p>
           </div>
 
