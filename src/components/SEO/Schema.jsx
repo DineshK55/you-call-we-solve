@@ -7,7 +7,8 @@ function Schema() {
         "@id": "https://www.youcallwesolve.com/#website",
         url: "https://www.youcallwesolve.com/",
         name: "You Call We Solve",
-        alternateName: "YouCallWeSolve",
+alternateName: "YouCallWeSolve",
+image: "https://www.youcallwesolve.com/logo.png",
       },
       {
         "@type": "LocalBusiness",
