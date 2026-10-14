@@ -2,6 +2,182 @@
    NAVBAR
 ========================= */
 
+
+
+
+
+/* =========================
+   TOP INFORMATION BAR
+========================= */
+
+.topbar {
+  width: 100%;
+  background: #f1f5f9;
+  color: #1e293b;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.topbar-container {
+  width: 100%;
+  max-width: var(--container);
+  min-height: 46px;
+  margin: 0 auto;
+  padding: 6px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+/* SOCIAL MEDIA ICONS */
+
+.topbar-social {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.topbar-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  font-size: 22px;
+  line-height: 1;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: transform 0.25s ease;
+}
+
+.topbar-whatsapp {
+  color: #25D366;
+}
+
+.topbar-instagram {
+  color: #E4405F;
+}
+
+.topbar-social a:hover {
+  transform: translateY(-2px) scale(1.08);
+}
+
+/* SERVICE MESSAGE */
+
+.topbar-message {
+  margin: 0;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* LOCATION */
+
+.topbar-location {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.topbar-location svg {
+  color: #ef3340;
+  font-size: 17px;
+  flex-shrink: 0;
+}
+
+/* TABLET */
+
+@media (max-width: 768px) {
+  .topbar-container {
+    min-height: 42px;
+    padding: 5px 18px;
+    gap: 12px;
+  }
+
+  .topbar-social {
+    gap: 10px;
+  }
+
+  .topbar-social a {
+    width: 30px;
+    height: 30px;
+    font-size: 21px;
+  }
+
+  .topbar-message {
+    font-size: 12px;
+  }
+
+  .topbar-location {
+    font-size: 12px;
+    gap: 5px;
+  }
+
+  .topbar-location svg {
+    font-size: 15px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+  .topbar-container {
+    padding: 5px 14px;
+    gap: 8px;
+  }
+
+  .topbar-message {
+    display: none;
+  }
+
+  .topbar-social {
+    gap: 10px;
+  }
+
+  .topbar-social a {
+    width: 30px;
+    height: 30px;
+    font-size: 21px;
+  }
+
+  .topbar-location {
+    font-size: 11px;
+  }
+}
+
+/* VERY SMALL MOBILE */
+
+@media (max-width: 350px) {
+  .topbar-container {
+    padding: 5px 10px;
+  }
+
+  .topbar-location {
+    font-size: 10px;
+    gap: 4px;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  .topbar-social a {
+    transition: none;
+  }
+}
+
+
+
+
 .navbar {
   position: sticky;
   top: 0;

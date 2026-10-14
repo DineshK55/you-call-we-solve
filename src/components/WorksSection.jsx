@@ -66,41 +66,38 @@ function WorksSection() {
                 key={work.id}
                 delay={index * 120}
               >
-                <div
-                  className="work-card"
-                  style={{ "--card-index": index }}
-                >
+                
+<Link
+  to={`/works/${work.id}`}
+  className="work-card"
+  style={{ "--card-index": index }}
+  aria-label={`View details for ${work.title}`}
+>
+  <div className="work-image-placeholder">
+    <img
+      src={work.thumbnailUrl}
+      alt={`${work.title} - ${work.service} in ${work.location}`}
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
 
-                  <div className="work-image-placeholder">
-                    <img
-  src={work.thumbnailUrl}
-  alt={`${work.title} - ${work.service} in ${work.location}`}
-  loading="lazy"
-  decoding="async"
-/>
-                  </div>
+  <div className="work-content">
+    <p>{work.service}</p>
 
-                  <div className="work-content">
+    <h3>{work.title}</h3>
 
-                    <p>{work.service}</p>
+    <span className="work-location">
+      <FaLocationDot aria-hidden="true" />
+      {work.location}
+    </span>
 
-                    <h3>{work.title}</h3>
+    <span className="work-view-btn">
+      View Details
+    </span>
+  </div>
+</Link>
 
-                    <span className="work-location">
-  <FaLocationDot aria-hidden="true" />
-  {work.location}
-</span>
-
-                    <Link
-                      to={`/works/${work.id}`}
-                      className="work-view-btn"
-                    >
-                      View Details
-                    </Link>
-
-                  </div>
-
-                </div>
               </ScrollReveal>
             ))}
 

@@ -440,9 +440,42 @@ function WorkDetails() {
                 {currentImage ? (
 
                   <div
-                    className="single-gallery-image"
-                    key={`${selectedType}-${selectedImageIndex}`}
-                  >
+  className="single-gallery-image"
+  key={`${selectedType}-${selectedImageIndex}`}
+  onClick={() => {
+    const photoIndex = allPhotos.findIndex(
+      (photo) =>
+        photo.image === currentImage &&
+        photo.type.toLowerCase() === selectedType
+    );
+
+    if (photoIndex !== -1) {
+      setLightboxIndex(photoIndex);
+      setShowAllPhotos(true);
+      document.body.style.overflow = "hidden";
+    }
+  }}
+  role="button"
+  tabIndex={0}
+  aria-label="Open this photo in the full photo viewer"
+  onKeyDown={(event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+
+      const photoIndex = allPhotos.findIndex(
+        (photo) =>
+          photo.image === currentImage &&
+          photo.type.toLowerCase() === selectedType
+      );
+
+      if (photoIndex !== -1) {
+        setLightboxIndex(photoIndex);
+        setShowAllPhotos(true);
+        document.body.style.overflow = "hidden";
+      }
+    }
+  }}
+>
 
                     <img
                       src={currentImage}

@@ -66,6 +66,7 @@
   line-height: 1.8;
 }
 
+
 /* =========================
    SOCIAL MEDIA
 ========================= */
@@ -73,9 +74,7 @@
 .footer-social {
   display: flex;
   align-items: center;
-
   gap: 14px;
-
   margin-top: 25px;
 }
 
@@ -87,57 +86,65 @@
   align-items: center;
   justify-content: center;
 
-  border: 1px solid #344258;
+  border: 1px solid transparent;
   border-radius: 50%;
 
-  color: #b7c2d1;
-
-  font-size: 20px;
+  color: #ffffff;
+  font-size: 22px;
 
   transition:
-    color 0.3s ease,
     background-color 0.3s ease,
     border-color 0.3s ease,
     box-shadow 0.3s ease,
     transform 0.3s ease;
 }
 
-/* WhatsApp */
+/* WhatsApp — always green */
 
-.social-icon.whatsapp:hover {
-  color: #ffffff;
-
-  background: #16a34a;
-
-  border-color: #22c55e;
-
-  box-shadow:
-    0 0 10px rgba(34, 197, 94, 0.45),
-    0 0 25px rgba(34, 197, 94, 0.25);
-
-  transform: translateY(-4px);
+.social-icon.whatsapp {
+  background: #25D366;
+  border-color: #25D366;
 }
 
-/* Instagram */
+/* Instagram — always brand gradient */
 
-.social-icon.instagram:hover {
-  color: #ffffff;
-
+.social-icon.instagram {
   background: linear-gradient(
-    135deg,
-    #f9ce34,
-    #ee2a7b,
-    #6228d7
+    45deg,
+    #feda75 0%,
+    #fa7e1e 25%,
+    #d62976 50%,
+    #962fbf 75%,
+    #4f5bd5 100%
   );
 
-  border-color: #ee2a7b;
+  border-color: #d62976;
+}
 
-  box-shadow:
-    0 0 10px rgba(238, 42, 123, 0.45),
-    0 0 25px rgba(98, 40, 215, 0.25);
+/* WhatsApp hover */
 
+.social-icon.whatsapp:hover {
+  background: #128C7E;
+  border-color: #128C7E;
+
+  box-shadow: 0 0 18px rgba(37, 211, 102, 0.35);
   transform: translateY(-4px);
 }
+
+/* Instagram hover */
+
+.social-icon.instagram:hover {
+  box-shadow: 0 0 18px rgba(214, 41, 118, 0.4);
+  transform: translateY(-4px);
+}
+
+/* Keyboard accessibility */
+
+.social-icon:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}
+
 
 /* =========================
    FOOTER COLUMNS

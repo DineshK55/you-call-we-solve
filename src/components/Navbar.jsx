@@ -1,7 +1,11 @@
 import { useState } from "react";
-import { FaWhatsapp } from "react-icons/fa";
 import { NavLink, Link } from "react-router-dom";
 import logo from "../assets/Logo.png";
+import {
+  FaWhatsapp,
+  FaInstagram,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 import "./Navbar.css";
 
 function Navbar() {
@@ -11,7 +15,44 @@ function Navbar() {
     setIsMenuOpen(false);
   };
 
-  return (
+  
+return (
+  <>
+    <div className="topbar">
+      <div className="topbar-container">
+        <div className="topbar-social">
+          <a
+            href="https://wa.me/917904180076"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+            className="topbar-whatsapp"
+          >
+            <FaWhatsapp />
+          </a>
+
+          <a
+            href="https://www.instagram.com/murugan_electrican/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="topbar-instagram"
+          >
+            <FaInstagram />
+          </a>
+        </div>
+
+        <p className="topbar-message">
+          Electrical • Plumbing • Machine Works
+        </p>
+
+        <p className="topbar-location">
+          <FaMapMarkerAlt />
+          <span>Anthiyur, Tamil Nadu</span>
+        </p>
+      </div>
+    </div>
+
     <header className="navbar">
       <div className="navbar-container">
 
@@ -132,9 +173,10 @@ function Navbar() {
           <span></span>
         </button>
 
-      </div>
-    </header>
-  );
+         </div>
+  </header>
+  </>
+);
 }
 
 export default Navbar;
