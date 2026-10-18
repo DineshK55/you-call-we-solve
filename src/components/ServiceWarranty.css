@@ -373,22 +373,22 @@
     text-align: center;
   }
 
-  .warranty-icon {
-    grid-column: 1;
-    grid-row: 1;
+.warranty-icon {
+  grid-column: 1;
+  grid-row: 1;
 
-    width: 116px;
-    height: 137px;
-    margin: 0 auto 22px;
-  }
+  width: 90px;
+ height: 108px;
+  margin: 0 auto 16px;
+}
 
-  .warranty-icon svg {
-    font-size: 31px;
-  }
+.warranty-icon svg {
+  font-size: 24px;
+}
 
-  .warranty-icon::after {
-    font-size: 11px;
-  }
+.warranty-icon::after {
+  font-size: 9px;
+}
 
   .warranty-label {
     grid-column: 1;

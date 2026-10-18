@@ -172,8 +172,8 @@
 
 @media (max-width: 480px) {
   .floating-work-button {
-    right: 14px;
-    bottom: 16px;
+    right: 10px;
+    bottom: 10px;
 
     gap: 7px;
     padding: 9px 10px 9px 13px;
