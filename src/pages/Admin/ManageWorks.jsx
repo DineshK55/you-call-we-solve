@@ -44,10 +44,17 @@ const snapshot = await getDocs(worksQuery);
     fetchWorks();
   }, []);
 
-  const handleDelete = async (work) => {
+
+const handleDelete = async (work) => {
+  if (work.isPermanent === true) {
+    alert("This main service cannot be deleted.");
+    return;
+  }
+
   const confirmed = window.confirm(
     `Are you sure you want to delete "${work.title}"?`
   );
+
 
   if (!confirmed) {
     return;
@@ -182,7 +189,14 @@ return (
                 {/* Work Details */}
                 <div className="work-card-content">
 
-                  <h2>{work.title}</h2>
+                  <h2>
+  {work.title}
+  {work.isPermanent === true && (
+    <span className="permanent-work-badge">
+      Permanent
+    </span>
+  )}
+</h2>
 
                   <div className="work-info">
 
@@ -213,13 +227,15 @@ return (
   Edit
 </Link>
 
-                    <button
-                      type="button"
-                      className="delete-btn"
-                      onClick={() => handleDelete(work)}
-                    >
-                      Delete
-                    </button>
+                    {work.isPermanent !== true && (
+  <button
+    type="button"
+    className="delete-btn"
+    onClick={() => handleDelete(work)}
+  >
+    Delete
+  </button>
+)}
 
                   </div>
 

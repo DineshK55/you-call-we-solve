@@ -368,6 +368,7 @@ const workData = {
   thumbnailUrl,
   createdAt: serverTimestamp(),
   published: true,
+  isPermanent: false,
 };
 
 const firestoreStartTime = performance.now();

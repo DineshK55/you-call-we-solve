@@ -31,6 +31,7 @@ function EditWork() {
   const [saving, setSaving] = useState(false);
 
   const [title, setTitle] = useState("");
+  const [isPermanent, setIsPermanent] = useState(false);
   const [service, setService] = useState("");
   const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
@@ -57,6 +58,7 @@ function EditWork() {
         const data = workSnapshot.data();
 
         setTitle(data.title || "");
+        setIsPermanent(data.isPermanent === true);
         setService(data.service || "");
         setLocation(data.location || "");
         setDescription(data.description || "");
@@ -671,11 +673,10 @@ if (finalAfterImages.length > 0) {
                 <label>Service</label>
 
                 <select
-                  value={service}
-                  onChange={(event) =>
-                    setService(event.target.value)
-                  }
-                >
+  value={service}
+  onChange={(event) => setService(event.target.value)}
+  disabled={isPermanent}
+>
                   <option value="">Select service</option>
                   <option value="Electrical Work">
                     Electrical Work

@@ -7,6 +7,7 @@ import Testimonials from "../components/Testimonials/Testimonials";
 import CTA from "../components/CTA";
 import FloatingWorkButton from "../components/FloatingWorkButton/FloatingWorkButton";
 import SEO from "../components/SEO/SEO";
+import ServiceWarranty from "../components/ServiceWarranty";
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
       />
 
       <Hero />
+      <ServiceWarranty />
       <Services />
       <ExperienceStats />
       <WorksSection />

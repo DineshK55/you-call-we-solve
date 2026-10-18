@@ -25,7 +25,20 @@ function WorksSection() {
           ...doc.data(),
         }));
 
-        setWorks(worksData.slice(0, 4));
+        const serviceOrder = [
+  "Electrical Work",
+  "Plumbing Work",
+  "Breaker Machine Work",
+  "Core Cutting Work",
+];
+
+const orderedWorks = serviceOrder
+  .map((service) =>
+    worksData.find((work) => work.service === service)
+  )
+  .filter(Boolean);
+
+setWorks(orderedWorks);
       } catch (error) {
         console.error("Error fetching works:", error);
       } finally {

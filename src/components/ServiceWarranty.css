@@ -1,0 +1,741 @@
+
+/* =========================================
+   PREMIUM SERVICE WARRANTY
+   You Call We Solve
+========================================= */
+
+.service-warranty {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 76px 24px;
+  background:
+    radial-gradient(
+      ellipse at 8% 45%,
+      rgba(220, 38, 38, 0.065),
+      transparent 38%
+    ),
+    linear-gradient(180deg, #f8fafc, #ffffff);
+}
+
+.warranty-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* MAIN CERTIFICATE */
+
+.warranty-content {
+  position: relative;
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  grid-template-rows: auto auto auto auto;
+  column-gap: 38px;
+  align-items: center;
+
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 46px 48px;
+  overflow: hidden;
+  isolation: isolate;
+
+  color: #ffffff;
+  background:
+    radial-gradient(
+      circle at 14% 15%,
+      rgba(234, 179, 8, 0.12),
+      transparent 30%
+    ),
+    linear-gradient(
+      125deg,
+      #061126 0%,
+      #0b1d3d 48%,
+      #10294b 100%
+    );
+
+  border: 1px solid rgba(234, 179, 8, 0.65);
+  border-radius: 24px;
+
+  box-shadow:
+    0 25px 65px rgba(7, 17, 31, 0.16),
+    0 8px 22px rgba(7, 17, 31, 0.07);
+
+  animation: warranty-arrive 0.8s ease both;
+}
+
+/* GOLD AND RED TOP EDGE */
+
+.warranty-content::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+
+  background: linear-gradient(
+    90deg,
+    #b91c1c 0%,
+    #ef4444 20%,
+    #fbbf24 48%,
+    #fff0a5 54%,
+    #eab308 75%,
+    #b91c1c 100%
+  );
+
+  background-size: 200% 100%;
+  animation: warranty-gold-flow 7s linear infinite;
+}
+
+/* DECORATIVE SHIELD RINGS */
+
+.warranty-content::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -165px;
+  right: -100px;
+
+  width: 340px;
+  height: 340px;
+  border: 1px solid rgba(251, 191, 36, 0.15);
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 22px rgba(251, 191, 36, 0.035),
+    0 0 0 48px rgba(251, 191, 36, 0.025),
+    0 0 0 76px rgba(255, 255, 255, 0.015);
+
+  pointer-events: none;
+}
+
+/* =========================================
+   GOLD WARRANTY BADGE
+========================================= */
+
+.warranty-icon {
+  position: relative;
+  grid-column: 1;
+  grid-row: 1 / 5;
+
+  width: 166px;
+  height: 190px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  margin: 0 auto;
+
+  color: #fff4b5;
+  background:
+    linear-gradient(
+      145deg,
+      #fff2a8 0%,
+      #dca817 28%,
+      #9c6508 53%,
+      #f4cf52 77%,
+      #a96d0a 100%
+    );
+
+  clip-path: polygon(
+    50% 0%,
+    91% 15%,
+    91% 60%,
+    82% 77%,
+    50% 100%,
+    18% 77%,
+    9% 60%,
+    9% 15%
+  );
+
+  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.28));
+
+  animation: warranty-badge-float 4s ease-in-out infinite;
+}
+
+/* INNER SHIELD */
+
+.warranty-icon::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 7px;
+
+  background: linear-gradient(
+    150deg,
+    #17345d,
+    #07142b 72%
+  );
+
+  clip-path: polygon(
+    50% 0%,
+    91% 15%,
+    91% 60%,
+    82% 77%,
+    50% 100%,
+    18% 77%,
+    9% 60%,
+    9% 15%
+  );
+}
+
+/* EXISTING SHIELD ICON */
+
+.warranty-icon svg {
+  color: #fbbf24;
+  font-size: 43px;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.3));
+}
+
+/* THREE-MONTH LABEL */
+
+.warranty-icon::after {
+  content: "3 MONTHS";
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.warranty-label {
+  grid-column: 2;
+  grid-row: 1;
+
+  align-self: end;
+  margin: 0 0 12px;
+
+  color: #fbbf24;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.warranty-content h2 {
+  grid-column: 2;
+  grid-row: 2;
+
+  margin: 0 0 17px;
+  color: #ffffff;
+
+  font-size: clamp(29px, 3.2vw, 43px);
+  font-weight: 750;
+  line-height: 1.2;
+  letter-spacing: -0.9px;
+  text-wrap: balance;
+}
+
+.warranty-description {
+  grid-column: 2;
+  grid-row: 3;
+
+  max-width: 650px;
+  margin: 0;
+
+  color: #d7e1ef;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* TRUST PILL */
+
+.warranty-highlight {
+  grid-column: 2;
+  grid-row: 4;
+  justify-self: start;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin-top: 23px;
+  padding: 12px 17px;
+
+  color: #fff8dc;
+  background: linear-gradient(
+    135deg,
+    rgba(234, 179, 8, 0.14),
+    rgba(255, 255, 255, 0.045)
+  );
+
+  border: 1px solid rgba(251, 191, 36, 0.55);
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.warranty-highlight svg {
+  flex-shrink: 0;
+  color: #4ade80;
+  font-size: 16px;
+}
+
+/* =========================================
+   DESKTOP INTERACTIONS
+========================================= */
+
+@media (hover: hover) and (pointer: fine) {
+  .warranty-content {
+    transition:
+      transform 0.35s ease,
+      box-shadow 0.35s ease,
+      border-color 0.35s ease;
+  }
+
+  .warranty-content:hover {
+    transform: translateY(-4px);
+    border-color: rgba(251, 191, 36, 0.9);
+
+    box-shadow:
+      0 32px 75px rgba(7, 17, 31, 0.2),
+      0 10px 26px rgba(220, 38, 38, 0.07);
+  }
+
+  .warranty-content:hover .warranty-icon {
+    animation-play-state: paused;
+  }
+
+  .warranty-content:hover .warranty-highlight {
+    transform: translateY(-2px);
+    background-color: rgba(234, 179, 8, 0.12);
+    border-color: #fbbf24;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 850px) {
+  .service-warranty {
+    padding: 60px 22px;
+  }
+
+  .warranty-content {
+    grid-template-columns: 135px minmax(0, 1fr);
+    column-gap: 26px;
+    padding: 38px 30px;
+    border-radius: 20px;
+  }
+
+  .warranty-icon {
+    width: 130px;
+    height: 158px;
+  }
+
+  .warranty-icon svg {
+    font-size: 35px;
+  }
+
+  .warranty-icon::after {
+    font-size: 12px;
+  }
+
+  .warranty-content h2 {
+    font-size: clamp(27px, 4vw, 35px);
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .service-warranty {
+    padding: 44px 18px;
+  }
+
+  .warranty-content {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto auto auto auto;
+
+    gap: 0;
+    padding: 30px 22px;
+    border-radius: 18px;
+    text-align: center;
+  }
+
+  .warranty-icon {
+    grid-column: 1;
+    grid-row: 1;
+
+    width: 116px;
+    height: 137px;
+    margin: 0 auto 22px;
+  }
+
+  .warranty-icon svg {
+    font-size: 31px;
+  }
+
+  .warranty-icon::after {
+    font-size: 11px;
+  }
+
+  .warranty-label {
+    grid-column: 1;
+    grid-row: 2;
+
+    align-self: auto;
+    margin-bottom: 10px;
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .warranty-content h2 {
+    grid-column: 1;
+    grid-row: 3;
+
+    margin-bottom: 15px;
+    font-size: clamp(26px, 7vw, 34px);
+    line-height: 1.24;
+    letter-spacing: -0.5px;
+  }
+
+  .warranty-description {
+    grid-column: 1;
+    grid-row: 4;
+
+    font-size: 13px;
+    line-height: 1.85;
+  }
+
+  .warranty-highlight {
+    grid-column: 1;
+    grid-row: 5;
+
+    justify-self: center;
+    max-width: 100%;
+    margin-top: 21px;
+    padding: 11px 14px;
+    border-radius: 12px;
+    font-size: 11px;
+  }
+
+  .warranty-content::after {
+    top: -140px;
+    right: -100px;
+    width: 230px;
+    height: 230px;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 380px) {
+  .service-warranty {
+    padding: 34px 14px;
+  }
+
+  .warranty-content {
+    padding: 27px 17px;
+  }
+
+  .warranty-content h2 {
+    font-size: 26px;
+  }
+
+  .warranty-highlight {
+    gap: 7px;
+    padding: 10px 11px;
+    font-size: 10px;
+  }
+}
+
+/* =========================================
+   KEYFRAMES
+========================================= */
+
+@keyframes warranty-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes warranty-badge-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes warranty-gold-flow {
+  from {
+    background-position: 100% 0;
+  }
+
+  to {
+    background-position: -100% 0;
+  }
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .warranty-content,
+  .warranty-content::before,
+  .warranty-icon,
+  .warranty-highlight,
+  .warranty-benefits,
+  .warranty-benefit,
+  .warranty-benefit-icon {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .warranty-benefit {
+    opacity: 1;
+  }
+
+  .warranty-content:hover,
+  .warranty-content:hover .warranty-highlight,
+  .warranty-benefit:hover,
+  .warranty-benefit:hover .warranty-benefit-icon {
+    transform: none;
+  }
+}
+
+
+
+/* =========================================
+   WARRANTY BENEFITS
+========================================= */
+
+.warranty-benefits {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+
+  margin-top: 36px;
+  padding-top: 26px;
+
+  border-top: 1px solid rgba(251, 191, 36, 0.28);
+
+  animation: warranty-benefits-arrive 0.7s ease both;
+  animation-delay: 0.2s;
+}
+
+.warranty-benefit {
+  min-width: 0;
+  padding: 22px 16px;
+  text-align: center;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.075),
+    rgba(255, 255, 255, 0.025)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 15px;
+
+  opacity: 1;
+  animation: warranty-benefit-enter 0.8s
+    cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+
+
+/* GOLD ICON */
+
+.warranty-benefit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+  margin: 0 auto 15px;
+
+  color: #fbbf24;
+  background: rgba(234, 179, 8, 0.12);
+
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  border-radius: 13px;
+
+  font-size: 19px;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease,
+    background-color 0.3s ease;
+}
+
+/* BENEFIT TEXT */
+
+.warranty-benefit h3 {
+  margin: 0 0 9px;
+
+  color: #fff4c2;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.warranty-benefit p {
+  margin: 0;
+
+  color: #cbd7e8;
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+/* DESKTOP HOVER */
+
+@media (hover: hover) and (pointer: fine) {
+  .warranty-benefit:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(251, 191, 36, 0.55);
+
+    background: linear-gradient(
+      145deg,
+      rgba(234, 179, 8, 0.13),
+      rgba(255, 255, 255, 0.045)
+    );
+
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.13);
+  }
+
+  .warranty-benefit:hover .warranty-benefit-icon {
+    transform: translateY(-2px) scale(1.05);
+
+    color: #07152d;
+    background: #fbbf24;
+  }
+}
+
+/* TABLET */
+
+@media (max-width: 850px) {
+  .warranty-benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 30px;
+  }
+
+  .warranty-benefit {
+    padding: 21px 15px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .warranty-benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+
+    margin-top: 26px;
+    padding-top: 22px;
+  }
+
+  .warranty-benefit {
+    padding: 18px 11px;
+    border-radius: 12px;
+  }
+
+  .warranty-benefit-icon {
+    width: 41px;
+    height: 41px;
+    margin-bottom: 12px;
+    border-radius: 11px;
+    font-size: 17px;
+  }
+
+  .warranty-benefit h3 {
+    font-size: 12px;
+  }
+
+  .warranty-benefit p {
+    font-size: 11px;
+    line-height: 1.7;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 360px) {
+  .warranty-benefits {
+    gap: 8px;
+  }
+
+  .warranty-benefit {
+    padding: 16px 8px;
+  }
+
+  .warranty-benefit h3 {
+    font-size: 11px;
+  }
+
+  .warranty-benefit p {
+    font-size: 10px;
+  }
+}
+
+/* BENEFIT ENTRANCE ANIMATION */
+
+@keyframes warranty-benefits-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+/* Individual warranty card reveal */
+
+.warranty-benefit-reveal {
+  min-width: 0;
+  height: 100%;
+}
+
+.warranty-benefit-reveal .warranty-benefit {
+  height: 100%;
+}

@@ -77,7 +77,7 @@ function Footer() {
 
             <div>
   <span>Phone</span>
-  <a href="tel:+917904180076">+91 79041 80076</a>
+  <a href="tel:+917904180076">+91 79041 80076 & +91 94433 80076</a>
 </div>
           </div>
 
