@@ -61,6 +61,10 @@
   color: #E4405F;
 }
 
+.topbar-youtube {
+  color: #FF0000;
+}
+
 .topbar-social a:hover {
   transform: translateY(-2px) scale(1.08);
 }

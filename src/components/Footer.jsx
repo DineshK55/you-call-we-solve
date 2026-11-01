@@ -1,5 +1,13 @@
+
 import { Link } from "react-router-dom";
-import { FaWhatsapp, FaInstagram, FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaWhatsapp,
+  FaInstagram,
+  FaYoutube,
+  FaPhone,
+  FaEnvelope,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 import {
   FaBolt,
   FaDroplet,
@@ -19,8 +27,8 @@ function Footer() {
         ========================= */}
         <div className="footer-brand">
           <Link to="/" className="footer-logo">
-  <img src={logo} alt="You Call We Solve" />
-</Link>
+            <img src={logo} alt="You Call We Solve" />
+          </Link>
 
           <p className="footer-description">
             Professional electrical, plumbing, breaker machine and core
@@ -30,7 +38,7 @@ function Footer() {
           {/* SOCIAL MEDIA */}
           <div className="footer-social">
             <a
-  href="https://wa.me/917904180076"
+              href="https://wa.me/917904180076"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
@@ -47,6 +55,16 @@ function Footer() {
               className="social-icon instagram"
             >
               <FaInstagram />
+            </a>
+
+            <a
+              href="https://youtube.com/@muruganelectricalworks?si=V0XEKKjP_iQtAqr8"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+              className="social-icon youtube"
+            >
+              <FaYoutube />
             </a>
           </div>
         </div>
@@ -76,10 +94,10 @@ function Footer() {
             </div>
 
             <div>
-  <span>Phone</span>
-  <a href="tel:+917904180076">+91 79041 80076</a>
-  <a href="tel:+916379923436">+91 63799 23436</a>
-</div>
+              <span>Phone</span>
+              <a href="tel:+917904180076">+91 79041 80076</a>
+              <a href="tel:+916379923436">+91 63799 23436</a>
+            </div>
           </div>
 
           <div className="contact-item">
@@ -127,9 +145,9 @@ function Footer() {
           </div>
 
           <div className="service-item">
-  <FaCircleDot />
-  <span>Core Cutting Work</span>
-</div>
+            <FaCircleDot />
+            <span>Core Cutting Work</span>
+          </div>
         </div>
 
       </div>

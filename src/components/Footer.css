@@ -146,6 +146,25 @@
 }
 
 
+
+/* YouTube — always red */
+
+.social-icon.youtube {
+  background: #FF0000;
+  border-color: #FF0000;
+}
+
+/* YouTube hover */
+
+.social-icon.youtube:hover {
+  background: #CC0000;
+  border-color: #CC0000;
+
+  box-shadow: 0 0 18px rgba(255, 0, 0, 0.4);
+  transform: translateY(-4px);
+}
+
+
 /* =========================
    FOOTER COLUMNS
 ========================= */

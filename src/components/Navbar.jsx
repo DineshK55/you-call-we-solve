@@ -4,6 +4,7 @@ import logo from "../assets/Logo.png";
 import {
   FaWhatsapp,
   FaInstagram,
+  FaYoutube,
   FaMapMarkerAlt,
 } from "react-icons/fa";
 import "./Navbar.css";
@@ -40,6 +41,16 @@ return (
           >
             <FaInstagram />
           </a>
+
+          <a
+  href="https://youtube.com/@muruganelectricalworks?si=V0XEKKjP_iQtAqr8"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="YouTube"
+  className="topbar-youtube"
+>
+  <FaYoutube />
+</a>
         </div>
 
         <p className="topbar-message">
